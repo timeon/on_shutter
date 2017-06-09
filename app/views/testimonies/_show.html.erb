@@ -1,0 +1,11 @@
+<table>
+  <tr class="post_row">
+    <%= render :partial => '/posts/voice', :locals => {:post=> post} %>
+    <%= render :partial => '/posts/info',  :locals => {:post=> post} %>
+    <% if logged_in? %>
+      <%= render :partial => '/posts/edit', :locals => {:post=> post} %>
+    <% end %>  
+  </tr>
+</table>
+  
+<%= render :partial => 'posts/responses',  :locals => {:post=> post} %>

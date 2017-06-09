@@ -1,0 +1,54 @@
+<br>
+<%if @user.send(contents_name).count == 1%>
+  <% title = contents_name.singularize.capitalize %>
+<% else %>
+  <% title = contents_name.capitalize %>
+<% end %>
+
+<div class="user-stats-table" id="questions-table">
+  <a name="questions"></a>
+  <table class="summary-title">
+    <tbody>
+      <tr>
+        <td>
+          <span class="summarycount ar"><%= contents.size %></span>
+        </td>
+        
+        <td class="summary-header">
+          <h2>
+          	<% if contents_path %>
+              <%= link_to "#{prefix} #{title}", contents_path, :title  => "View all #{@user.display_name}'s #{contents_name}" %>
+            <% else %>
+              <%= "#{prefix} #{title}" %>
+            <% end %>
+        </td>
+
+<% if false %>
+        <td style="width: 100%">
+          <div id="tabs-question-user" class="subtabs">
+            <a class="youarehere" href="/users/stats/questions?userid=1048&amp;page=1&amp;sort=votes" title="sort by highest votes">votes</a>
+            <a href="/users/stats/questions?userid=1048&amp;page=1&amp;sort=newest" title="sort by creation date">newest</a>
+            <a href="/users/stats/questions?userid=1048&amp;page=1&amp;sort=views" title="sort by most viewed">views</a>
+            <a href="/users/stats/questions?userid=1048&amp;page=1&amp;sort=recent" title="sort by recent activity">recent</a>
+          </div>
+        </td>
+<% end %>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <%= render :partial => 'slip', :collection => contents, :as => :content %>
+  
+<% if false %>
+  <%= render :partial => 'photo', :collection => contents %>
+  
+  <div id="question-pager" class="pager fr">
+    <span class="page-numbers current">1</span>
+    <a href="/users/stats/questions?page=2&amp;userid=18&amp;sort=votes" title="go to page 2"><span class="page-numbers">2</span></a>
+    <a href="/users/stats/questions?page=3&amp;userid=18&amp;sort=votes" title="go to page 3"><span class="page-numbers">3</span></a>
+  </div>
+<% end %>
+
+</div>
+<br class="cbt">

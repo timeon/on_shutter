@@ -1,0 +1,34 @@
+<td id="post_info" >
+  <table class="fw">
+    <tr>
+      <td colspan=2 align="left" valign="top">
+          <br>
+          <span class="post_body"><%= sanitize(post.body) %></span>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="vt">
+        <%= render :partial => '/posts/actions', :locals=>{:post => post} %>
+      </td>
+
+      <td align="right" class="post-signature owner">
+        <% if post.user %>
+          <%= render :partial => 'users/signature', :locals=>{:created_at => post.created_at, :user => post.user} %>
+        <% end %>  
+      </td>
+    </tr>
+    
+  <% if admin? %>
+    <tr>
+      <td colspan="2">
+          <em><%= render :partial => '/posts/tags', :locals=>{:post => post} %></em>
+      </td>
+    </tr>
+  <% end %>
+  
+  </table>
+  
+  <%= render :partial => 'comments/index', :locals => {:item => post} %>
+  
+</td>

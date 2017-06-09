@@ -1,0 +1,27 @@
+<td>
+  <div id = "add_response">
+    <div class="response_body" id = "new_response_form">
+      <table>  
+        <tr >
+          <% if logged_in? %>
+            <td class='new_response'>
+            <%= form_for response, :remote => true do |f| %>
+              <div class="field"> <%= f.hidden_field  :user_id %> </div>
+              <div class="field"> <%= f.hidden_field  @post_id_name %> </div>
+              <%= f.text_area :body, :cols => "92", :rows => "10", :id => "new_response_editor" %>
+              <%= f.submit "Post Your #{@response_display_name}", :class=>"submit", :name=>"commit", :type=>"submit" %>
+            <% end %>             
+            </td>
+          <% else %>
+            <td onclick = "show_flash_login('add_response_notice', '<%= response.class.name.downcase %>', '<%= response.new_response_archor %>' )">
+              <textarea id="dummy-teaser" name="dummy-teaser" cols="92" rows="5">Your <%= @response_display_name%></textarea>         
+            </td>  
+          <% end %>
+        </tr>
+        <tr>
+          <td> <%= render :partial => 'shared/in_place_notice', :locals => {:notice_id=>'add_response_notice'} %> </td>
+        </tr>
+      </table>  
+    </div>
+  </div>
+</td>

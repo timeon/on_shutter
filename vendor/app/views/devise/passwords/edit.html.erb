@@ -1,0 +1,34 @@
+<%= content_for :title do %>Change your password<% end %>
+
+<div class='content'>
+
+  <%= devise_error_messages! %>
+
+  <div id="reset_password" class="dialog">
+
+    <h2>Change Password</h2>
+
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+      <%= f.hidden_field :reset_password_token %>
+
+      <fieldset>
+        <div class="field">
+          <label><%= f.label :password %></label>
+            <%= f.password_field :password,  :class=>"text"  %></p>
+        </div>
+        <div class="field">
+          <label><%= f.label :password_confirmation %></label>
+          <%= f.password_field 'password_confirmation',  :class=>"text" %>
+        </div>
+      </fieldset>      
+
+      <fieldset class="submit">
+        <%= f.submit "Change", :class=>"submit", :name=>"commit", :type=>"submit", :value=>"Change" %>
+      </fieldset>
+      
+    <% end %>
+
+  </div>
+</div>
+  
+

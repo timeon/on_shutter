@@ -1,0 +1,24 @@
+<%= content_for :subheader do %>
+  <h1>中区主恩堂2015通讯录更新   CBC Central Campus Directory Update</h1>
+<% end %>
+
+<%= render 'instruction' %>
+
+<% if logged_in? %>
+  <h2>
+  	<%= link_to 'Add contact', new_contact_path %> | 
+    <%= link_to "Show Disabled contacts",  contacts_path(:disabled => true) %> |
+    <%= link_to 'Show Phone list', list_contacts_path %> |
+    <%= link_to 'Show Photos', photo_contacts_path %> | 
+    <%= link_to 'Print', print_contacts_path %> |
+    <%= link_to 'Print Photo', print_photo_contacts_path %>
+  </h2>
+<% else %>
+  <%= content_for :script do %>
+	window.onload=function(){show_flash_login('list_contact_notice', 'update your contacts', '<%= contacts_path %>' );}
+  <% end %>
+<% end %>
+
+<%= render :partial => 'shared/in_place_notice', :locals => {:notice_id=> 'list_contact_notice'} %>  	
+
+<br>

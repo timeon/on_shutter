@@ -1,0 +1,6 @@
+<div class="vote"  id = "photo_share_<%= post.id %>">
+  <%= render :partial => 'posts/view_count', :locals => {:post=> post} %>
+  <br>
+  <%= render :partial => 'shared/google_plus1', :locals => {:url=> photo_url(post)}%>
+</div>
+

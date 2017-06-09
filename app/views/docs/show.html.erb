@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<%= link_to @doc.name, @doc.file.url %>
+</p>
+
+<p>
+  <%= link_to "download", download_doc_path(@doc) %>
+</p>
+
+<% if @doc.user_id %>
+<p>
+  By <%= @doc.user.name %>
+</p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_doc_path(@doc) %> |
+<%= link_to 'Back', docs_path %>

@@ -1,0 +1,36 @@
+<td>
+	<% edit_response_id = "edit_response_" + response.id.to_s %>
+
+	<a name="<%=edit_response_id%>"></a>	
+	<div id="<%= 'edit_response_' + response.id.to_s %>" 
+		 class="edit_response" 
+		 name="<%= 'response_' + response.id.to_s %>"  
+		 style="display:none;">
+		 
+		<% notice_id = "response_notice_#{response.id}" %>
+		
+		<div class="response_body" id = "response_form_<%= response.id %>">
+			<table>  
+			  <tr >
+			    <% if current_user %>
+			      <td class='new_response' id='<%= "response_form_#{response.id}" %>'>
+					  <%= form_for response, :remote => true do |f| %>
+					    <%= f.text_area :body, :cols => "92", :rows => "10", :id => "response_editor_#{response.id}" %>
+					    <%= f.submit "Save Changes", :class=>"submit", :name=>"commit", :type=>"submit" %>
+					    <input type="button" name="cancel" value="Cancel" onClick="hide_edit_response_form(<%=response.id%>)"/>
+					  <% end %>
+			      </td>
+			    <% else %>
+			      <td onclick = "show_flash_login('<%=notice_id%>', '<%= response.class.name.downcase %>', '<%=photo_path(@photo) + "#new_response"%>' )">
+			        <textarea id="dummy-teaser" name="dummy-teaser" cols="100" rows="10"></textarea>        	
+			      </td>  
+			    <% end %>
+			  </tr>
+			
+			  <tr>
+			    <td> <%= render :partial => 'shared/in_place_notice', :locals => {:notice_id=>notice_id} %> </td>
+			  </tr>
+			</table>  
+		</div>
+	</div>
+</td>

@@ -1,0 +1,102 @@
+<%= content_for :subheader do %>
+    <h1 id="user-displayname"><%= @user.display_name %> - Edit</h1>
+<% end %>
+
+<table id="user-edit-table" width="100%">
+  <tbody>
+    <tr>
+
+      <td style="vertical-align: top; text-align: center; padding: 20px; width: 128px">
+        <%= image_tag(@user.gravatar_url(:size=>128)) %>
+        <div>&nbsp;</div>
+        <p style="font-size: 200%; font-weight: bold">
+          <a href="http://www.gravatar.com/" target="_blank" title="your gravatar is associated with your email address"
+            onclick="$('#gravatar-info').html('picture changes may take up to 24 hours')">change
+            picture</a></p>
+        <div id="gravatar-info" style="color: #777">
+        </div>
+      </td>
+
+      <td style="vertical-align: top">
+        <h2>Registered User</h2>
+
+      <%= form_for @user do |f| -%>
+        <%= error_messages_for :user %>
+
+        <div id="edit-block">
+          <input id="author" name="author" type="text">
+          <input id="fkey" name="fkey" type="hidden" value="c064e59c23a063ce0753c54f68849672">
+          <input type="hidden" name="i1l" value="qF4KSK">
+        </div>
+
+        <table style="width: 100%">
+          <tbody>
+            <tr>
+              <td>Display Name</td>
+              <td><%= f.text_field :name %></td>
+            </tr>
+
+            <tr>
+              <td>Real Name</td>
+              <td><%= f.text_field :real_name %></td>
+            </tr>
+
+            <tr>
+              <td>Email</td>
+              <td>
+                <%= f.text_field :email, :size => 60 %>
+                <span class="edit-field-overlay">never displayed, used for optional notifications and your gravatar</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Website</td>
+              <td><%= f.text_field :website %></td>
+            </tr>
+
+            <tr>
+              <td>Location</td>
+              <td><%= f.text_field :location %></td>
+            </tr>
+
+            <tr>
+              <td>Birthday</td>
+              <td>
+                <%= f.text_field :birthday%>
+                <span class="edit-field-overlay">YYYY/MM/DD, only used for displaying age</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Copyright statement</td>
+              <td> <%= f.text_area :copyright, :cols => 63, :rows => 3 %> </td>
+            </tr>
+
+            <tr>
+              <td>About</td>
+              <td>
+                <%= f.text_area :about_me, :cols => "60", :rows => "10", :id => "about_me_editor" %>
+                <span class="edit-field-overlay">YYYY/MM/DD, only used for displaying age</span>
+              </td>
+            </tr>
+
+            <tr>
+              <td> </td>
+              <td class="space">
+                <div class="form-error"> </div>
+                <div class="form-submit">
+
+                  <%= f.submit %>
+
+                  <input type="button" id="cancel" name="cancel" value="Cancel" onclick="location.href='<%= user_path(@user)%>'" style="opacity: 1;">
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <% end %>
+
+      </td>
+    </tr>
+  </tbody>
+</table>

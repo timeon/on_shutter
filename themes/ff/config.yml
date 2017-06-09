@@ -1,0 +1,82 @@
+# Configuration options can be accessed as
+# configatron.site_name
+
+common: &shared
+  site_name: FreeFuyin
+  domain: FreeFuyin.com
+  site_namemobile: FreeFuyin
+  company_name: FreeFuyin
+  admin_email: admin@FreeFuyin.com
+  support_name: FreeFuyin Support
+  support_email: support@FreeFuyin.com
+  description: Gospel questions and answers
+  motto: the truth will set you free - John 8:32
+  keywords: Chritian, Gospel, God, Jesus, Salvation, Sin
+  main_content: contact
+  contents:
+    photo: 
+      name: photo
+      response_name: critique
+      response_display_name: response
+      praise: Nice shot
+      response_praise: Good critique
+    question:
+      name: question
+      response_name: answer
+      response_display_name: answer
+      praise: Good question
+      response_praise: Helpful answer
+    article:
+      name: article
+      response_name: review
+      response_display_name: response
+      praise: Thoughtful article
+      response_praise: Helpful response
+    testimony:
+      name: testimony
+      response_name: echo
+      response_display_name: response
+      praise: inspiring testimony
+      response_praise: Helpful response
+    prayer_request:
+      name: prayer
+      response_name: prayer
+      response_display_name: prayer
+      praise: I will pray
+      response_praise: Maybe we can pray differently?
+  responses:
+    critique: 
+      content: photo
+      praise: Good critique
+    answer:
+      content: question
+      praise: Helpful answer
+    review:
+      content: article
+      praise: Helpful response
+    echo:
+      content: testimony
+      praise: Helpful response
+    prayer:
+      content: prayer
+      praise: Amen
+  facebook:
+    appid: 373840045968076
+    apikey: 3f8eb6862576e330b0be1d2a4fa2384b
+  ads: false
+
+development:
+  <<: *shared
+  site_url: http://192.168.0.149:5000
+
+production:
+  <<: *shared
+  site_url: www.FreeFuyin.com
+  
+staging:
+  <<: *shared
+
+test:
+  <<: *shared
+
+

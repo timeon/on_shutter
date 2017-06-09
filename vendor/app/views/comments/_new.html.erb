@@ -1,0 +1,51 @@
+<% notice_id = "#{item.resource_name}_comment_notice_#{item.id}" %>
+
+<tr>
+  <td>
+	<% if current_user == nil %>
+      <a id="<%= item.resource_name%>_comment_link_<%=item.id%>" 
+    	 class="comments-link" 
+	     onclick = "show_flash_login('<%=notice_id%>', 'comment', '<%=item.show_path%>' )"
+    	 title="Reply or comment on this <%= item.resource_name%>">add comment</a>
+	<% else %>
+      <a id="<%= item.resource_name%>_comment_link_<%=item.id%>" 
+    	 class="comments-link" 
+    	 onclick="show_comment_form('<%= item.resource_name%>', <%=item.id%>)" 
+    	 title="Reply or comment on this <%= item.resource_name%>">add comment</a>
+	<% end %>
+  </td>  
+</tr>
+
+<tfoot>
+  <tr>
+    <td class="add_comment" id= "<%= item.resource_name%>_comment_form_<%=item.id%>" style="display:none">
+      <%= form_for item, :url => item.comment_path,
+                         :remote => true, 
+                         :html => { :method => :put} do |f| %>
+        <table>
+          <tbody>
+            <tr>
+              <input name='_method' type='hidden' value='put' />
+              <div class="field"> <%= f.hidden_field  :id %> </div>
+              <input name="id" type="hidden" value="<%=item.id%>" />
+              <td>
+                <textarea name="comment" cols="68" rows="3"></textarea>
+              </td>
+              <td>
+                <input type="submit" value="Add Comment"><br>
+                &nbsp;&nbsp;&nbsp;<a id="cancel_comment_link" onclick="hide_comment_form('<%= item.resource_name%>', <%=item.id%>)" >Cancel</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      <%end%>
+    </td>
+  </tr>
+  
+  <tr>  
+  	<td>
+      <br><%= render :partial => 'shared/in_place_notice', :locals => {:notice_id=>notice_id} %>
+    </td>
+  </tr>
+  
+</tfoot>

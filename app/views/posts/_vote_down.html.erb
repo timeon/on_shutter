@@ -1,0 +1,22 @@
+<% msg = 'Vote down (click again to cancel vote)' %>
+
+<% if current_user == nil %>
+
+  <a class="vote-down-off" 
+     title= "<%= msg %>"
+     onclick = "show_flash_login('<%=notice_id%>', 'vote', '<%=post.show_path%>' )" ></a>
+
+<% elsif current_user == post.user%>
+
+  <a class="vote-down-off" 
+     title= "<%=msg%>"
+     onclick = "show_flash_self('<%=notice_id%>' )" ></a>
+
+<% else %>
+  <%= link_to 'down',   
+              post.vote_down_path,   
+              :remote => true, 
+              :method => :put, 
+              :title=> msg,
+              :class=> (current_user.voted_against?(post)) ? "vote-down-on" : "vote-down-off" %> 
+<% end %>

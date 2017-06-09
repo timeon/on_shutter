@@ -1,0 +1,149 @@
+<table class="vcard">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; width: 170px">
+        <table>
+          <tbody>
+            <tr>
+            
+              <td id="user-avatar">
+                <%= image_tag(@user.gravatar_url(:size=>128)) %>
+              </td>
+            </tr>
+            <tr>
+              <td class="summaryinfo">
+                <span class="summarycount"><%= @user.karma %></span>
+                <div style="margin-top: 0px; font-weight: bold">votes</div>
+
+<% if false %>
+                <a href="/privileges" title="view reputation privileges"><span class="summarycount"><%= @user.reputation_count %></span></a>
+                <div style="margin-top: 5px; font-weight: bold">reputation</div>
+
+                <div id="leagueRank" style="margin-top: 8px;">
+                  <a href="http://stackexchange.com/leagues/37/alltime/stackapps/2010-05-19/18#18" target="_blank">top <b>0.83%</b> overall</a>
+                </div>
+<% end %>
+
+              </td>
+            </tr>
+
+<% if false %>
+            <tr style="height: 30px">
+              <td class="summaryinfo" style="vertical-align: bottom" title="<%= pluralize(@user.fans.length, 'fan') %>">
+                <div style="margin-top: 10px; font-weight: bold"></div>
+                <%= render :partial => 'star', :locals => {:user => @user} %>
+              </td>
+            </tr>
+<% end %>
+
+            <tr style="height: 20px">
+              <td class="summaryinfo" style="vertical-align: bottom">
+                <%= pluralize(@user.view_count, 'views') %>
+              </td>
+            </tr>
+            
+<% if false %>
+            <tr style="height: 20px">
+              <td class="summaryinfo" style="vertical-align: bottom">
+                flag weight 90
+              </td>
+            </tr>
+<% end %>
+
+          </tbody>
+        </table>
+      </td>
+
+      <td style="vertical-align: top; width: 350px">
+
+        <% if @user == current_user %>
+          <div style="float: right; margin-top: 19px; margin-right: 4px">
+            <%= link_to("edit", edit_user_path(@user)) %>
+            <span class="lsep">|</span> 
+            <%= link_to("style", style_user_path(@user)) %>
+<% if false %> 
+            <span class="lsep">|</span> 
+            <%= link_to("delete", edit_user_path(@user)) %>
+            <span class="lsep">|</span>
+            <a href="/users/login?noauto=true&amp;returnurl=%2fusers%2f6989%2ftimeon" title="add a secondary openid to your account">add openid</a> 
+<% end %>
+          </div>
+        <% end %>
+
+        <h2 style="margin-top: 20px">
+          <% if @user.moderator? %>
+            <%= link_to("Moderator ♦", "/moderator") %>
+          <% elsif @user.place_holder? %>
+            &nbsp;
+          <% else %>
+            Registered User
+          <% end %>
+        </h2>
+
+      <% if not @user.place_holder? %>
+
+        <table class="user-details">
+          <tbody>
+            <tr>
+              <td style="width: 120px">name</td>
+              <td style="width: 230px" class="fn nickname"> <b><%= @user.display_name%></b> </td>
+            </tr>
+
+            <tr>
+              <td>member for</td>
+              <td><span class="cool" title="<%= @user.created_at %>"><%= time_ago_in_words(@user.created_at) %></span></td>
+            </tr>
+
+            <tr>
+              <td>seen</td>
+              <td><span class="supernova" title="<%= @user.seen %>"><%= time_ago_in_words(@user.seen) %> ago</span></td>
+            </tr>
+
+            <% if @user == current_user or admin? %>
+              <tr>
+                <td>login</td>
+                <td><span class="cool"><%= @user.login %></span></td>
+              </tr>
+  
+              <tr>
+                <td>email</td>
+                <td><span class="cool"><%= best_in_place @user, :email, :type => :input, :nil => "click to edit"  %></span></td>
+              </tr>
+  
+              <tr>
+                <td>real name</td>
+                <td><span class="cool"><%= best_in_place @user, :real_name, :type => :input, :nil => "click to edit"  %></span></td>
+              </tr>
+            <% end %>  
+
+            <tr>
+              <td>website</td>
+              <td><span class="cool"><%= best_in_place @user, :website, :type => :input, :nil => "click to edit"  %></span></td>
+            </tr>
+
+            <tr>
+              <td>location</td>
+              <td><span class="cool"><%= best_in_place @user, :location, :type => :input, :nil => "click to edit" %></span></td>
+            </tr>
+
+            <tr>
+              <td>age</td>
+              <td><%= @user.birthday ? time_ago_in_words(@user.birthday).split(" ")[1] : ""%></td>
+              <td><span class="cool"><%= best_in_place @user, :birthday, :type => :input %></span></td>
+            </tr>
+          </tbody>
+        </table>
+
+      <% end %>
+
+      </td>
+      
+      <td style="width: 390px">
+        <div id="user-about-me" class="note round">
+          <%== @user.about_me %>
+        </div>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,18 @@
+<% post_path = "/" + @current_content.pluralize + "/new" %>
+<% notice_id = "post_#{@current_content}_notice" %>
+
+<%= render :partial => 'shared/in_place_notice', :locals => {:notice_id=> notice_id} %>		
+
+<% if current_user == nil %>
+    <%= link_to  "Post new", "#", 
+    :onClick => "show_flash_login('#{notice_id}', 'post',  '#{post_path}' )", 
+    :class => (@adding_post ? "youarehere" : ""),     
+    :title => "Post a new #{@current_content.humanize.downcase}" %>
+<% else %>
+    <%= link_to "Post new", post_path,  
+    :id=>"nav-askquestion", 
+    :class => (@adding_post ? "youarehere" : ""),     
+    :title => "Post a new #{@current_content.humanize.downcase}" %>
+<% end %>  
+
+

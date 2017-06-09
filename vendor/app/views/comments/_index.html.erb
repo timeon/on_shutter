@@ -1,0 +1,9 @@
+<% if false %>
+<table id="comment_list_<%= item.resource_name%>_<%= item.id %>" class="comment_list comments">
+  <%= render :partial => 'comments/show', :collection => item.comments.recent.limit(20).all, :as => :comment %>
+</table>
+
+<table id="new_comment_<%= item.id %>" class="comment_list">
+  <%= render :partial => 'comments/new', :locals=>{:item => item} %>
+</table>
+<% end %>

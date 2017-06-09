@@ -1,0 +1,13 @@
+<div class="question-summary narrow" id="question-summary-<%=album.id%>">
+  <div class="summary">
+    <div class="tiny_photo"> <%= link_to image_tag(album.cover_image_url), photos_path(:album =>album), :title => sanitize(album.title) %></div>
+    <div>
+      <h3> <%= link_to  truncate(sanitize(album.title), :length => 60),
+                        photos_path(:album =>album), 
+                        :class => "question-hyperlink", 
+                        :title => sanitize(album.title) %> </h3>
+
+      <span class="trancated_body"><%= album.photos.count %> photos      </span>
+    </div>
+  </div>
+</div>

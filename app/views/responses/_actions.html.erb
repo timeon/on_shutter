@@ -1,0 +1,21 @@
+<% response_id = "response_" + response.id.to_s %>
+<% edit_response_id = "edit_response_" + response.id.to_s %>
+
+<div class="post-menu">
+<% if false %>
+    <a href="/questions/6/stacky-a-net-client-library-now-supports-1-1/1939#1939" title="permalink to this answer" id="link-post-1939">link</a>
+    <span class="lsep">|</span>
+
+    <a id="flag-post-1939" title="flag this post for serious problems or moderator attention">flag</a>
+    <span class="lsep">|</span>
+  <% end %>
+  <br>
+  <% if admin? or current_user == response.user -%>
+    <%= link_to "delete", response, :remote => true, :confirm => "Delete this #{@response_display_name}?", :method => :delete, :class => "delete_response", :name => response_id %>
+    <span class="lsep">|</span>
+    <%= link_to "edit", "##{edit_response_id}", :onClick=>"show_edit_response_form('#{response.id}')" %>
+  <% end -%>
+
+</div>
+
+

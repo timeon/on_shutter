@@ -1,0 +1,43 @@
+
+<tr id="comment_<%= comment.id%>" class="comment">
+  <td class="comment-actions">
+    <table>
+      <tbody>
+        <tr>
+          <td class="comment-score">
+            <span>&nbsp;</span>
+          </td>
+          <td>
+            <a class="comment-up comment-up-off" title="this is a great comment" style="visibility: hidden; ">upvote</a>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td>
+          <a class="comment-flag flag-off" title="flag this comment as unconstructive, offensive, or spam" style="visibility: hidden; ">flag</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+  
+  <td class="comment-text">
+      
+      <% if comment.user == current_user or admin? %>
+        <span title="click to edit" class="comment-copy"><%= best_in_place comment, :comment, :type => :textarea, :nil => "click me to edit comment" %></span>
+      <% else %>
+        <span class="comment-copy"><%= comment.comment%></span>
+      <% end %>
+      
+      <% if comment.user_id %>
+        - <%= link_to comment.user.title, user_path(comment.user) %>
+      <% end %>
+
+      <span class="comment-date"><span title="<%= comment.created_at %>"><%= time_ago_in_words(comment.created_at).gsub("about ", "") %> ago</span></span>
+
+      <% comment_id = "comment_" + comment.id.to_s %>
+      <% if comment.user == current_user or admin? %>
+        <%= link_to "delete", comment_path(comment), :remote => true, :confirm => "Delete this comment?", :class => "comments-link delete_comment", :method => "delete", :name=>comment_id%>
+      <% end %>
+  </td>
+  
+</tr>

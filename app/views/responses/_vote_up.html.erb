@@ -1,0 +1,20 @@
+<% msg = "#{@response_praise}, vote up!. (click again to cancel vote)" %>
+<% vote_up_id = "response_vote_#{response.id}_up" %>
+
+<div id = "<%=vote_up_id%>">
+	<% if current_user == nil %>
+	  <a class="vote-up-off" 
+	     title= "<%= msg %>"
+	     onclick = "show_flash_login('<%=notice_id%>', 'vote', '<%= response.anchor %>' )" ></a>
+	<% elsif current_user == response.user%>
+	  <a class="vote-up-off"
+	     title= "<%=msg%>"
+	     onclick = "show_flash_self('<%=notice_id%>' )" ></a>
+	<% else %>
+	  <%= link_to "up",   response.vote_up_path,   
+	              :remote => true, 
+	              :method => :put, 
+	              :title  => msg,
+	              :class  => (current_user.voted_for?(response)) ? "vote-up-on" : "vote-up-off" %> 
+	<% end %>
+</div>

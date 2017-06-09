@@ -1,0 +1,23 @@
+<td class="response_body" id = "response_body_<%= response.id %>">
+    <div class="post-text">
+      <%= sanitize(response.body) %>
+    </div>
+
+    <table class="fw">
+        <tr>
+          <td class="vt">
+            <%= render :partial => "responses/actions", :locals=>{:response => response} %>
+          </td>
+
+          <td align="right" class="post-signature">
+            <%= render :partial => "users/signature", :locals=>{:created_at => response.created_at, :user => response.user} %>
+          </td>
+        </tr>
+    </table>
+    
+    <%= render :partial => 'comments/index', :locals => {:item     => response} %>
+</td>
+
+<% if response.user == current_user %>
+  <%= render  :partial => 'responses/edit', :locals => {:response => response} %>
+<% end %>

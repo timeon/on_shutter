@@ -1,0 +1,23 @@
+<%= content_for :title do %>Post a <%= @post_name%><% end %>
+
+<%= content_for :subheader do %>
+  <h1>
+	<%= image_tag(@post.resource_name + "_32.png", :class=>'no_boder')%>
+    Post a <%= @post_name%>
+  </h1>
+<% end %>
+
+<%= content_for :tabs do %>
+  <%= render :partial =>'/shared/tabs' %>
+<% end %>
+
+<%= content_for :side do %>
+  What kind of <%= @posts_name.humanize.downcase %> can I post?<br>
+  <%= link_to 'Posting guideline', "/faq#what-can-i-post" %><br>
+  <br><br>
+<% end %>
+
+﻿<%= content_for :main do %>
+  <%= render  :partial => '/posts/form', :locals => {:post=> @post} %>
+<% end %>
+

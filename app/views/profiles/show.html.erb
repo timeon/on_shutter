@@ -1,0 +1,128 @@
+<% content_for :intro do %>
+
+  <div class="column">
+    <div class="addon">
+      <h1><%=current_user%></h1>
+      <%= gravatar_image_tag( @user.email, :size => 256) %>
+      <h1>10</h1>
+      <p>Reputation.</p>
+      <p>0 views</p>
+    </div>
+  
+    <% if current_user == @user %>
+      <div class="addon beta">
+        <div class="beta ribbon">
+          <span class="ribbon-text">private</span>
+        </div>
+        <div class="addon-wrapper">
+          <div class="addon-overview" >
+            <%= render :partial => 'profiles/account_details' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div><!--column-->
+  
+  <div class="column">
+    <!--
+    <div class="addon ga">
+      <div class="addon-wrapper">
+        <div class="addon-overview" >
+          <%= render :partial => 'profiles/about_me' %>
+        </div>
+      </div>
+    </div>
+    -->
+    <div class="addon ga">
+      <div class="addon-wrapper">
+        <div class="addon-overview" >
+          <%= render :partial => 'profiles/profile_details' %>
+        </div>
+      </div>
+    </div>
+  </div><!--column-->
+<% end %>
+
+<div class="column">
+  <div class="addon beta">
+    <div class="beta ribbon">
+      <span class="ribbon-text">Beta</span>
+    </div>
+    <div>
+      <h1>
+        Hello 1</h1>
+      <h2>
+        how are you?</h2>
+      <p>
+        how are you?</p>
+      dgfdsfsafda<br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="addon beta">
+      <div class="beta ribbon">
+        <span class="ribbon-text">Beta</span>
+      </div>
+      <div class="addon-wrapper">
+        <div class="addon-overview" style="background-image: url(/images/icons/addon-icon-apigee_facebook-70x70.png)">
+          <h2 class="name">
+            <a href="apigee_facebook">Apigee for Facebook</a>
+          </h2>
+          <a class="button" href="apigee_facebook">Learn More</a>
+          <div class="addon-options-summary">
+            <p class="summary">
+            </p>
+          </div>
+          <div class="addon-options">
+            <div class="option public_beta">
+              <p class="price">
+                Public Beta</p>
+              <h3 class="name">
+                Basic
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="addon ga">
+      <div class="addon-wrapper">
+        <div class="addon-overview" style="background-image: url(http://s3.amazonaws.com/assets.heroku.com/addons.heroku.com/catalogs/52/original.png)">
+          <h2 class="name">
+            <a href="zencoder">Zencoder</a>
+          </h2>
+          <a class="button" href="zencoder">Learn More</a>
+          <div class="addon-options-summary">
+            <p class="summary">
+              Video encoding software as a service, designed to quickly convert audio and video into web and mobile compatible formats.</p>
+          </div>
+          <div class="addon-options">
+            <div class="free ga option">
+              <p class="price">
+                free</p>
+              <h3 class="name">
+                Developer
+              </h3>
+            </div>
+            <div class="ga option">
+              <p class="price">
+                <small>$</small>40.00<span class="unit">per month</span></p>
+              <h3 class="name">
+                1,000 Minutes
+              </h3>
+            </div>
+            <div class="ga option">
+              <p class="price">
+                <small>$</small>2000.00<span class="unit">per month</span></p>
+              <h3 class="name">
+                100,000 Minutes
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clear">
+  </div>
+</div>

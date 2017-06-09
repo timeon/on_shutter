@@ -1,0 +1,16 @@
+<div id="answers">
+  <a name="tab-top"></a>
+  <div id="answers-header">
+    <div class="subheader answers-subheader">
+      <h2><%= pluralize(@response_count, @response_display_name.capitalize)  %></h2>
+<% if false %>
+      <div id="tabs">
+        <a href="/questions/198/py-stackexchange-an-api-wrapper-for-python?answertab=active#tab-top" title="Answers with the latest activity first">active</a> <a href="/questions/198/py-stackexchange-an-api-wrapper-for-python?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a> <a class="youarehere" href="/questions/198/py-stackexchange-an-api-wrapper-for-python?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+      </div>
+<%end%>
+    </div>
+  </div>
+
+  <%= render :partial => 'responses/show', :collection => post.send(@responses_name), :as => :response %>
+
+</div>

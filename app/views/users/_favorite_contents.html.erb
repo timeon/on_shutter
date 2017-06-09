@@ -1,0 +1,7 @@
+  <% contents_name = type.to_s.pluralize %>
+  
+  <%= render :partial => 'users/contents_summary', 
+             :locals => {:prefix        => "Favorite",
+             	         :contents_name => "#{contents_name}", 
+             	         :contents_path => index_link ? send("#{contents_name}_path", {:tab => @user.display_name + "'s favorite", :user => @user}) : nil,
+             	         :contents      => @user.send("favorite_#{contents_name}") } %>

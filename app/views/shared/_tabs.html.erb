@@ -1,0 +1,17 @@
+<div id="tabs">
+  <%if false%>
+    <a href="?tab=interesting" class="youarehere" title="Posts that may be of interest to you based on your history and tag preferences">interesting</a>
+    <%= render :partial=>'shared/tab', :locals => {:tab => "hot", :title => "Post with most active over the last few days"} %>
+    <%= render :partial=>'shared/tab', :locals=>{:tab=>"hot",  :title=>"photos with the most votes over the last few days"} %>
+    <%= render :partial=>'shared/tab', :locals=>{:tab=>"week", :title=>"photos with the most votes this week"} %>
+    <%= render :partial=>'shared/tab', :locals=>{:tab=>"month",:title=>"photos with the most votes this month"} %>
+    <%= render :partial=>'shared/tab', :locals=>{:tab=>"ever", :title=>"photos with the most votes ever"} %>
+  <%end%>
+    <%= render :partial=>'/shared/new_button' %>
+    <%= render :partial=>'/shared/tab', :locals=>{:tab=>"recent", :title=>"recent #{@current_content.pluralize.humanize.downcase}"} %>
+    <%= render :partial=>'/shared/tab', :locals=>{:tab=>"popular", :title=>"top voted #{@current_content.pluralize.humanize.downcase}"} %>
+  <% if logged_in? %>
+    <%= render :partial=>'/shared/tab', :locals=>{:tab=>"my",  :title=>"my own #{@current_content.pluralize.humanize.downcase}"} %>
+    <%= render :partial=>'/shared/tab', :locals=>{:tab=>"favorite", :title=>"my favorites #{@current_content.pluralize.humanize.downcase}"} %>
+  <%end%>    
+ </div>

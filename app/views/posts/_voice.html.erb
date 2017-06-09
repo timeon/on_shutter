@@ -1,0 +1,4 @@
+<td class="votecell" id = "photo_voice_<%= post.id %>">
+    <%= render :partial => '/posts/vote',  :locals => { :post => post}%>
+    <%= render :partial => '/posts/share', :locals => { :post => post}%>
+</td>

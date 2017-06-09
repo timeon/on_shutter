@@ -1,0 +1,14 @@
+<table>
+	<tr class="photo_contact">
+	  <td> English Names </td>
+	  <td> 中文姓名  </td>
+	  <td> 电话</td>
+	</tr>
+	
+	
+	<%= render :partial => 'list', :collection => @contacts, :as => :contact %>  
+</table>
+
+<%= content_for :subheader do %>
+  <h1>圣地亚哥中區主恩堂電话索引（2015年）</h1>
+<% end %>

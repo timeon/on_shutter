@@ -1,0 +1,10 @@
+Dear <%= @user.name %>,
+
+You have successfully updated your contact for CBCSD Central Campus directory.
+ 
+To view your contact info or make changes, , just follow this link: <%= @url %>.
+ 
+Thanks and have a blessed day!
+
+向前
+

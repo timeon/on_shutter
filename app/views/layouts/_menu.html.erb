@@ -1,0 +1,27 @@
+  <div id="hmenus">
+  	
+  	<%if false%>
+    <div class="nav mainnavs">
+		<%= render 'layouts/admin_menu' %>
+    </div>
+    <%end%>
+    
+    <div class="nav askquestion">
+      <ul>
+        <% if configatron.contents.to_hash.size > 1%>
+        	<% configatron.contents.to_hash.keys.each do |type| %>
+            <%= render :partial => 'layouts/menu_item', :locals => {:type=> type.to_s, :name => configatron.contents.send(type).name} %>
+          <% end %>
+        <% end %>
+
+        <% if configatron.site_name == "FreeFuyin" %>
+          <%= render :partial => 'layouts/contacts_button'%>
+      	<% end %>
+      	
+  	<%if false%>
+        <li class="<%= @current_content == "users" ? "youarehere" : "" %>"><%= link_to "Users", users_path, :id=>"nav-users"%></li>
+    <%end%>
+      </ul>
+    </div>
+    
+  </div>

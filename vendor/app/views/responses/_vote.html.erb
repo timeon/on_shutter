@@ -1,0 +1,10 @@
+<% notice_id = "response_vote_#{response.id}_notice" %>
+
+<td class="votecell" id = "response_voice_<%= response.id %>">
+  <span class="vote" id = "response_vote_<%= response.id %>">
+    <%= render :partial => 'responses/vote_up', :locals=>{:response => response, :notice_id=>notice_id} %>
+    <span class="vote-count-post"><%= response.plusminus %></span>
+    <%= render :partial => 'responses/vote_down', :locals=>{:response => response, :notice_id=>notice_id} %>
+    <%= render :partial => 'shared/in_place_notice', :locals=>{:response => response, :notice_id=>notice_id} %>
+  </span>
+</td>

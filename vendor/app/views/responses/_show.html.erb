@@ -1,0 +1,17 @@
+  <% response_id = "response_" + response.id.to_s %>
+  <div id="<%= response_id%>" class="answer response">
+
+    <%= content_tag(:a, "", :name => response_id) %>
+    <table>  
+      <tr>
+        <%= render   :partial => 'responses/vote', :locals => {:response => response} %>
+        
+		<% if response.id %>
+		  <%= render :partial => 'responses/body', :locals => {:response => response} %>
+		<% else %>
+		  <%= render :partial => 'responses/new',  :locals => {:response => response} %>
+		<% end %>
+        
+      </tr>
+    </table>  
+  </div>

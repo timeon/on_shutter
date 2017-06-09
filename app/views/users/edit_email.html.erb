@@ -1,0 +1,16 @@
+<div class='content'>
+  <div id="reset_password" class="dialog">
+    <h2>Change email address</h2>
+
+    <p>Please enter your new email address below. Please double-check it, because you may need it later to retrieve your password.</p>
+
+    <%= form_for @user, :url => update_email_user_url(@user), :html => {:method => :put} do |f| %>
+
+      <p><%= f.text_field 'email', :class=>"text" %></p>
+  
+      <p><%= f.submit "", :class=>"submit", :name=>"commit", :type=>"submit", :value=>"Change" %>  or 
+      <%= link_to "forget about it", profile_url(@user) %></p>
+
+    <% end %>
+  </div>
+</div>

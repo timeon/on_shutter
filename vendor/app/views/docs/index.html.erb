@@ -1,0 +1,21 @@
+<h1>Documents </h1>
+
+<table class="sortable">
+
+<% @docs.each do |doc| %>
+  <tr>
+    <td><%= link_to doc.name, doc.file.url %></td>
+    <td><% if doc.user_id %> <%= doc.user_id %> <%end%></td>
+    <td width="20px"></td>
+    <td><%= link_to "Download", download_doc_path(doc) %></td>
+    <td width="20px"></td>
+    <td><%= link_to 'Edit', edit_doc_path(doc) %></td>
+    <td width="20px"></td>
+    <td><%= link_to 'Delete', doc, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Doc', new_doc_path %>

@@ -1,0 +1,135 @@
+<%= content_for :title do %>FAQ<% end %>
+
+<%= content_for :subheader do %>
+  <h1> Frequently Asked Questions</h1>
+<% end %>
+
+<div class="faq-page">
+
+  <h2>Who is this for? </h2>
+    <p> <%= configatron.site_name %> is for <span class="revision-comment round">professional and enthusiast photographers,</span> people who take photos and critique on them because they love the art form. If you have taken photos that you really like to share with fellow photographers, you are in the right place !</p>
+
+  <h2>Why is it useful?</h2>
+    <p>Unlike mass photo storage sites like picasa or flickr. <%= configatron.site_name %> serves a different purpose of facilitating photographers to share their best with their peer, to exchange ideas and learn on the fine art of phoptographing. 
+ 
+  <h2>How does it work?</h2>
+    <p><%= configatron.site_name %> makes it very easy to post photos either by uploading a file, or by importing it form an existing URL from other photo sites. Tools are at your finger tip for voting, critiquing on, and bookmarking your favorite photos. The simple basic rule below allows the community to run the site. </p>
+    <ul>
+      <li>Top voted photos comes up first</li>
+      <li>Top voted critiques comes up first</li>
+      <li>Users with most voted photos and critiques come up first</li>
+    </ul>
+
+  <a name='what-can-i-post'></a>
+  <h2> What kind of photos can I post here?</h2>
+  
+    <p> You should only post <span class="revision-comment round">awesome, amazing or striking photos that you own  or have right to, for the community to share, appreciate and learn</span>. 
+
+  <h2> What kind of photos should I <i>not</i> post here?</h2>
+    <p>To prevent your photos from being flagged and possibly removed, and your account from being banned,<b> avoid</b> posting photos that are&nbsp; . </p>
+    <ul>
+      <li>offensive to any group</li>
+      <li>pornographic (<b>result in immediate and permanent ban on the account and IP address</b>)</li>
+      <li>copyrighted to somebody else</li>
+      <li>out of focus, poorly composed, improperly exposed, or just plain subprime</li>
+    </ul>
+    <p> Keep in mind this is a place for sharing your very best with your fellow photographers, not another dump site for the memory cards, or for entire albums of photos.</p>
+
+  <h2>What happens to the right to my photos</h2>
+    <p>You own the right to your photos. By posting them on <%= configatron.domain %>, you allow us to display and link to them. Please see the <%= link_to "terms of service", "/terms" %> for details</p>
+
+  <h2>How should I critique?</h2>
+    <p>Give disciplined, systematic analysis of the photo. Critique is not just fault finding and negative judgement, it is also merit recognition. A good photo conveys certain perceiption or emotion of the artist on the subject; a good critique recognizes and respondes to the artist. It may also suggest alternative composition or handling of the subject. </p>
+
+  <h2>Do I need to have an account?</h2>
+    <p>You don't need an account to browse through the photos, critics and artists. However, if you decided to become an active member of the community, you need an account to post photos and critiques, and to vote on them.</p>
+
+  <h2> <a name="benice"></a>What's the rule?</h2>
+    <p><span class="revision-comment round">Be nice. Treat others with the same respect you'd want them to treat you.</span> We're all here to learn together. Be tolerant of others who may not know everything you know. Bring your sense of humor.</p>
+
+  <h2>Is it free?</h2>
+    <p>Free as can be. But if you break the rule (be nice), you'll be banned forever.</p>
+
+  <h2> <a name="signatures"></a>Can I use a signature or tagline?</h2>
+    <p> Please <i>don't</i> use signatures or taglines in your posts. Every post you make is already signed with your standard user card, which links directly back to your user page. Your user page belongs to you. Fill it with information about your interests, links to stuff you've worked on, or whatever else you like! </p>
+
+<% if false %>
+  <h2> <a name="behonest"></a>Be honest.</h2>
+    <p> Above all, be honest. If you see misinformation, vote it down. Add comments indicating what, specifically, is wrong. Provide better informatino of your own.</p>
+
+  <h2> <a name="reputation"></a>What is reputation?</h2>
+    <p> Reputation is completely optional. Normal use of <%= configatron.site_name %>, that is, posting photos and providing critiques, does not require any reputation whatsoever. </p>
+    <p> If you'd like to help us run <%= configatron.site_name %>, you'll need to earn some reputation first. Reputation is a rough measurement of <span class="revision-comment round">how much the community trusts you</span>. Reputation is never given, it is earned by convincing fellow users that you know what you're talking about.
+    </p>
+    <a name="reputation-gain"></a>
+    <p> The primary way to gain reputation is by posting good photos and useful critiques. Your peers will vote on your posts, and those votes will cause you to gain (or, in rare cases, lose) reputation: </p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td> photo is voted up </td>
+          <td class="x"> +10 </td>
+          <td> </td>
+        </tr>
+
+        <tr>
+          <td> critique is voted up </td>
+          <td class="x"> +5 </td>
+          <td> </td>
+        </tr>
+
+        <tr>
+          <td> critique is accepted </td>
+          <td class="x"> +15 </td>
+          <td> (+2 to acceptor)
+          </td>
+        </tr>
+
+        <tr>
+          <td> photo is voted down </td>
+          <td class="x"> -2 </td>
+          <td> </td>
+        </tr>
+
+        <tr>
+          <td> critique is voted down </td>
+          <td class="x"> -2 </td>
+          <td> (-1 to voter) </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p> A maximum of <b>40</b> votes can be cast per user per day, however, to reach the maximum you must vote on at least 10 photos. You can earn a maximum of <b>200</b> reputation per day (although accepted critiques and bounty awards are immune to this limit). </p>
+    <p> &nbsp;</p> <p> Amass enough reputation points and <%= configatron.site_name %> will grant you <a href="/privileges"> additional privileges</a>: </p>
+
+    <a name="reputation-abilities"></a>
+    <table>
+      <tbody>
+        <tr> <td class="x"> 15 </td> <td> Vote up </td> </tr>
+        <tr> <td class="x"> 15 </td> <td> Flag for moderator attention </td> </tr>
+<!--         <tr> <td class="x"> 50 </td> <td> Leave comments<sup>.</sup> </td> </tr> -->
+<!--         <tr> <td class="x"> 100 </td> <td> Edit community wiki posts </td> </tr> -->
+        <tr> <td class="x"> 125 </td> <td> Vote down (costs <b>1</b> rep on critiques) </td> </tr>
+<!--         <tr> <td class="x"> 200 </td> <td> Reduced advertising </td> </tr> -->
+<!--         <tr> <td class="x"> 250 </td> <td> Vote to close, reopen, or migrate your photos </td> </tr> -->
+        <tr> <td class="x"> 500 </td> <td> Retag photos </td> </tr>
+        <tr> <td class="x"> 1000 </td> <td> Show total up and down vote counts </td> </tr>
+        <tr> <td class="x"> 1500 </td> <td> Create new tags </td> </tr>
+<!--         <tr> <td class="x"> 2000 </td> <td> Edit other people's posts, vote to approve or reject suggested edits </td> </tr> -->
+<!--         <tr> <td class="x"> 3000 </td> <td> Vote to close, reopen, or migrate any photos </td> </tr> -->
+<!--         <tr> <td class="x"> 5000 </td> <td> Vote to approve or reject suggested tag wiki edits </td> </tr> -->
+        <tr> <td class="x"> 10000 </td> <td> Vote to delete photos, access to moderation tools </td> </tr>
+<!--         <tr> <td class="x"> 15000 </td> <td> Protect photos to prevent critiques by new users </td> </tr> -->
+        <tr> <td class="x"> 20000 </td> <td> Vote to delete negatively voted critiques </td> </tr>
+      </tbody>
+    </table>
+
+    <p>You can always comment on your photos and critiques, and any critiques to photos you've posted, even with 1 rep.</p>
+
+    <p> At the high end of this reputation spectrum there is little difference between users with high reputation and <span class="mod-flair" title="moderator">.</span> moderators. That is very much intentional. We don't run <%= configatron.site_name %>. The community does. </p>
+
+    <h2> <a name="flagging"></a>What if I see bad things happening?</h2>
+    <p> Please use our flagging system to let us know about it. Each comment has a small flag icon, and every post has a flag menu at the bottom. Take advantage of it! We actively moderate our community, but we need your help to do so. Anything that is getting consistently flagged by our community members <i>will</i> be investigated and followed up on. 
+
+<% end %>
+</div>

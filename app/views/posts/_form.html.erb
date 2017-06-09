@@ -1,0 +1,29 @@
+  <%= form_for(post, :html => { :multipart => true }) do |f| %>
+    <% if post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+        <ul>
+        <% post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <% if post.id == nil %>
+      <%= f.hidden_field(:user_id) %>
+    <% end %>
+
+
+    <%= render  :partial => 'fields', :locals => {:post=> @post, :f => f} %>
+
+
+    <% if post.id == nil %>
+      <%= f.submit "Post #{@post_name.capitalize}", :class=>"submit", :name=>"commit", :type=>"submit" %>
+    <% else %>
+      <%= f.submit "Save Changes", :class=>"submit", :name=>"commit", :type=>"submit" %>
+      <input type="button" name="cancel" value="Cancel" onClick="hide_edit_post_form(<%=post.id%>)"/>
+    <% end %>
+
+  <% end -%>

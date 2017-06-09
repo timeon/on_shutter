@@ -1,0 +1,13 @@
+<span class="reputation-score" title="<%= pluralize(user.post_count, "postings") %>">
+  <%= user.post_count %>
+</span>
+
+<span title="<%= pluralize(user.response_count, "responses") %>">
+  <span class="badge3"></span>
+  <span class="badgecount"><%= user.response_count %></span>
+</span>
+
+<span class="reputation-score" title="<%= pluralize(user.karma, 'total vote') %> earned ">
+  <span class="badge3"></span>
+  <%=user.karma%>
+</span>

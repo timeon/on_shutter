@@ -1,0 +1,25 @@
+<div class="answer-summary">
+
+  <div onclick="window.location.href='<%= content.anchor %>'" 
+       title="total number of votes for this <%= content.class.name.downcase %> " 
+       class="answer-votes default">
+    <%= content.respond_to?(:plusminus) ? content.plusminus : "" %>
+  </div>
+
+  <% if content.respond_to?(:image) %>
+    <div class="slip_image">
+      <%= link_to image_tag(content.image.url(:thumb)), content.anchor, :class=>"answer-hyperlink "%>
+    </div>
+  <% end %>
+
+  <div class="answer-link">
+    <%= link_to truncate(sanitize(content.title), :length => 80), 
+                content.anchor, 
+                :class=>"answer-hyperlink "%>
+
+    <% if content.respond_to?(:photos) %>
+	      | <%= pluralize(content.photos.count, "photo") %>
+    <% end %>
+
+  </div>
+</div>

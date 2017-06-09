@@ -1,0 +1,19 @@
+
+<% if tab != nil%>
+  <%= will_paginate(posts) %>
+<% end %>
+
+<br class="cbt">
+
+<div id="list_show">
+<table>
+  <%= render :partial => '/posts/row', :collection => posts, :as => :post %>
+</table>
+</div>
+
+<% if tab != nil%>
+  <%= will_paginate(posts) %>
+<% end %>
+
+<br class="cbt">
+

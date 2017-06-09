@@ -1,0 +1,8 @@
+<%= content_for :subheader do %>
+    <h2><%= @user ? "#{@user.name}'s" : "" %> Albums</h2>
+<% end %>
+
+
+<% @albums.each do |album| %>
+  <%= render :partial => 'show', :locals => {:album => album} %>
+<% end %>

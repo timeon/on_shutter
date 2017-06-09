@@ -1,0 +1,23 @@
+<% notice_id = "user_#{@user.id}_fans" %>
+
+<div id="user_fans">
+<% if current_user == nil %>
+  <a class="star-off" 
+     title= "Bookmark as favorite (click again to cancel)",
+     onclick = "show_flash_login('<%=notice_id%>', 'bookmark', '<%=user_path(@user)%>' )" ></a>
+<% else %>
+  <%= link_to 'star', 
+              star_user_path(@user), 
+              :remote => true, 
+              :method => :put, 
+              :title=> "Bookmark as favorite (click again to cancel)",
+              :class=> (current_user and current_user.favorite_users.include?(@user)) ? "star-on" : "star-off" %> 
+
+<% end %>
+
+<span class="summaryinfo" title="<%= pluralize(@user.fans.length, 'fan') %> " >
+  <%= pluralize(@user.fans.length, 'fan') %><br>
+</span>
+</div>
+
+<%= render :partial => 'shared/in_place_notice', :locals => {:notice_id=>notice_id} %>

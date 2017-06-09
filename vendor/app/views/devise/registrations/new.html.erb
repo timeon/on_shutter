@@ -1,0 +1,47 @@
+<%= content_for :title do %>Sign Up<% end %>
+<%= content_for :subheader do %><h1>Sign Up</h1><% end %>
+
+<%= content_for :main do %>
+  <table>
+	<tr>
+		<td>
+		  <%= devise_error_messages! %>
+		  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :post }) do |f| %>
+		
+		      <p><label for="login">User name</label><br>
+		      <%= f.text_field :login, :id=>"login", :title=> "login", :value => "your user name", :class => "text" %></p>
+		
+		      <p><label for="email">Email</label><br>
+		      <%= f.text_field :email, :id=>"email", :title=> "email address", :value=>"your email address", :class => "text"  %></p>
+		
+		      <p><label for="password">Password</label><br>
+		      <%= f.password_field :password, :id=>"password", :title=> "password", :class => "text"  %></p>
+		
+		      <p><label for="password_confirmation">Confirm Password</label><br>
+		      <%= f.password_field :password_confirmation, :id=>'password_confirmation', :title=> "password confirmation", :class => "text"  %></p>
+		
+		      <%= f.submit "", :class=>"submit", :name=>"commit", :type=>"submit", :value=>"Sign Up" %><br><br>
+		      
+			  Already have an account?<br>
+			  <%= link_to 'Log In', new_user_session_path %><br>
+			  <br><br>
+			  Forgot your password?   <br>
+			  <%= link_to 'Reset Password', new_password_path(resource_name) %><br>
+		      
+		  <% end %>
+		</td>
+				
+		<td width="100px"></td>
+		
+		<td><%= render "/services/services_list" %></td>
+	</tr>
+  </table>     
+     
+        
+  <script type="text/javascript">
+    //<![CDATA[
+    $('#login').focus(function() { if ( $(this).val() == 'your login' ) $(this).val(''); })
+    $('#email').focus(function() { if ( $('#email').val() == 'your email address' ) $(this).val(''); })
+    //]]>
+  </script>    
+<% end %>

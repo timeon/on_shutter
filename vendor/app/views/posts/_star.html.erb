@@ -1,0 +1,20 @@
+<br>
+
+<% if current_user == nil %>
+  <a class="star-off" 
+     title= "Bookmark as favorite (click again to cancel)",
+     onclick = "show_flash_login('<%=notice_id%>', 'bookmark', '<%=post.show_path%>' )" ></a>
+<% else %>
+  <%= link_to 'star', 
+              post.star_path, 
+              :remote => true, 
+              :method => :put, 
+              :title=> "Bookmark as favorite (click again to cancel)",
+              :class=> (current_user.favorite_photos.include?(post)) ? "star-on" : "star-off" %> 
+
+<% end %>
+
+<span class="summaryinfo" title="<%= pluralize(post.favers.length + post.rating/2, 'user') %> favor this <%= @post_name%> " >
+  <%= post.favers.length + post.rating/2 %><br>
+</span>
+

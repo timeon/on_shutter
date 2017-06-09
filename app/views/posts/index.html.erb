@@ -1,0 +1,23 @@
+<%= content_for :title do %><%= @tab%> <%= @posts_name%><% end %>
+<%= content_for :description do %><%= @tab%> <%= @posts_name%><% end %>
+<%= content_for :keywords do %><%= @tab%> <%= @posts_name%><% end %>
+
+<%= content_for :subheader do %>
+
+<h1>
+  <%= image_tag(@posts_name + "_32.png", :class=>'no_boder')%>
+
+  <% if @album != nil %>
+	  <%= link_to(@album.user.name, user_path(@album.user)) %> > <%= link_to(@album.title, index_path(:album=>@album.id)) %> | <%= @album.photos.count%> <%= @posts_name%>
+  <% else %>
+	  <%=@tab.capitalize%>  <%= @posts_name.humanize.downcase %>
+  <% end %>
+</h1>
+  
+<% end %>
+
+<%= content_for :tabs do %>
+  <%= render :partial =>'/shared/tabs' %>
+<% end %>
+
+<%= render :partial =>'/posts/list_show', :locals => {:posts => @posts, :tab => @tab}%>

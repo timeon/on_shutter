@@ -1,0 +1,4 @@
+<span class="vote-count-post" 
+      title="<%= pluralize(post.votes_for + post.rating, 'up vote') %>, <%= pluralize(post.votes_against, 'down vote') %>" >
+  <%= post.plusminus + post.rating %>
+</span>

@@ -1,0 +1,20 @@
+<% msg = "#{@post_praise}, vote up! (click again to cancel vote)" %>
+
+<% if current_user == nil %>
+  <a class="vote-up-off" 
+     title= "<%= msg %>"
+     onclick = "show_flash_login('<%=notice_id%>', 'vote', '<%=post.show_path%>' )" ></a>
+<% elsif current_user == post.user%>
+  <a class="vote-up-off" 
+     title= "<%=msg%>" 
+     onclick = "show_flash_self('<%=notice_id%>' )" ></a>
+<% else %>
+  <%= link_to 'up',   
+              post.vote_up_path,   
+              :remote => true, 
+              :method => :put, 
+              :title=> msg,
+              :class=> (current_user.voted_for?(post)) ? "vote-up-on" : "vote-up-off" %> 
+<% end %>
+
+

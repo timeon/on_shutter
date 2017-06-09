@@ -1,0 +1,46 @@
+﻿<div class="module notice">
+
+<table class="photo_info">
+  <%if false %>
+    <tr><td class="label">date_digitized:  </td><td> <%= post.date_digitized.strftime("%b %d, %Y") %></td></tr> 
+    <tr><td class="label">date_original:   </td><td> <%= post.date_original.strftime("%b %d, %Y") %></td></tr> 
+    <tr><td class="label">white_balance    </td><td> <%= post.white_balance %>       </td></tr> 
+  <%end%>
+  
+    <% if current_user == post.user  or admin? %>
+        <tr><td class="label">Date:            </td><td>   <%= best_in_place post, :taken_at_str,              :type => :input %>    </td></tr>
+        <tr><td class="label">Camera:          </td><td>   <%= best_in_place post, :make,                      :type => :input %>    </td></tr>
+        <tr><td class="label">Model:           </td><td>   <%= best_in_place post, :model,                     :type => :input %>    </td></tr>
+        <tr><td class="label">Width:           </td><td>   <%= best_in_place post, :width,                     :type => :input %>    </td></tr>
+        <tr><td class="label">Height:          </td><td>   <%= best_in_place post, :height,                    :type => :input %>    </td></tr>
+        <tr><td class="label">ISO:             </td><td>   <%= best_in_place post, :iso,                       :type => :input %>    </td></tr>
+        <tr><td class="label">Metering Mode:   </td><td>   <%= best_in_place post, :metering_mode_str,         :type => :input %>    </td></tr>
+        <tr><td class="label">Aperture:        </td><td> f/<%= best_in_place post, :f_number,                  :type => :input %>    </td></tr>
+        <tr><td class="label">Focal Length:    </td><td>   <%= best_in_place post, :focal_length,              :type => :input %>mm  </td></tr>
+        <tr><td class="label">Exposure Time:   </td><td>   <%= best_in_place post, :exposure_time,             :type => :input %>sec </td></tr>
+        <tr><td class="label">Exposure Program:</td><td>   <%= best_in_place post, :exposure_program_str,      :type => :input %>    </td></tr>
+        <tr><td class="label">Exposure Bias:   </td><td>   <%= best_in_place post, :exposure_bias_value.to_s,  :type => :input %>    </td></tr>
+    <% else %>        
+        <tr><td class="label">Date:            </td><td> <%= post.taken_at_str %>        </td></tr>     
+        <tr><td class="label">Camera:          </td><td> <%= post.make%>                 </td></tr> 
+        <tr><td class="label">Model:           </td><td> <%= post.model %>               </td></tr> 
+        <tr><td class="label">Width:           </td><td> <%= post.width %>               </td></tr> 
+        <tr><td class="label">Height:          </td><td> <%= post.height %>              </td></tr> 
+        <tr><td class="label">ISO:             </td><td> <%= post.iso %>                 </td></tr> 
+        <tr><td class="label">Metering Mode:   </td><td> <%= post.metering_mode_str %>   </td></tr> 
+        <tr><td class="label">Aperture:        </td><td> f/<%= post.f_number %>          </td></tr> 
+        <tr><td class="label">Focal Length:    </td><td> <%= post.focal_length %> mm     </td></tr> 
+        <tr><td class="label">Exposure Time:   </td><td> <%= post.exposure_time %> sec   </td></tr> 
+        <tr><td class="label">Exposure Program:</td><td> <%= post.exposure_program_str %></td></tr> 
+        <tr><td class="label">Exposure Bias:   </td><td> <%= post.exposure_bias_value.to_s %> </td></tr> 
+        <tr><td class="label">Flash:           </td><td> <%= post.flash!=0 ? "":"Not"%> Used </td></tr> 
+    <% end %>        
+
+    <tr><td class="label" >&nbsp;</td></tr> 
+    <tr><td class="label" colspan=2><%= sanitize("&copy; " + post.user.copyright) %></td></tr> 
+    
+  </table>
+</div>
+
+
+

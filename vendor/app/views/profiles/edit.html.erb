@@ -1,0 +1,32 @@
+<div class='content'>
+  <div id="reset_password" class="dialog">
+    <h2>Update Profile</h2>
+   
+    <% unless @profile.user.not_using_openid? %>
+      <p>This is your <%= configatron.site_name %> profile. It's not related to your OpenID Identity.</p>
+    <% end %>
+    
+    <%= form_for @profile, :url => profile_url(@profile.user), :html => {:method => :put} do |f| %>
+    
+      <% @profile.public_attributes.each do |column| -%>
+        <fieldset>
+          <label><%= column.humanize %></label>
+          <%= input "profile", "#{column}", :value => @profile.send(column), :class=>"text" %>
+        </fieldset>
+      <% end -%>
+<!--
+      <fieldset>
+        <label>About me</label>
+        <%= input "profile", "about_me", :value => @profile.about_me, :class=>"text", :type=>"text" %>
+      </fieldset>
+-->
+      <fieldset>
+        <%= submit_tag "Save changes", :class=>"submit" %>
+      </fieldset>
+
+    <% end -%>
+
+    <br>
+
+  </div>
+</div>

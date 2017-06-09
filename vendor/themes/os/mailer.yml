@@ -1,0 +1,15 @@
+common: &shared
+  address:              smtp.gmail.com
+  port:                 587
+  domain:               foobar.com
+  user_name:            notifications@OnShutters.com
+  password:             osmail#1!
+  authentication:       plain
+  enable_starttls_auto: true
+
+development:
+  <<: *shared
+
+production:
+  <<: *shared
+

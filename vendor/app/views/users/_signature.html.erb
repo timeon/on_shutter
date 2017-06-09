@@ -1,0 +1,26 @@
+<div class="user-info">
+  <div class="user-action-time">
+    <% if false %>
+    <span title="2011-01-19 09:35:48Z" class="relativetime"><%= time_ago_in_words(created_at) %> </span>ago
+    <% end %>
+  </div>
+
+  <div class="user-gravatar32">
+    <%= link_to(image_tag(user.gravatar_url(:size=>32)), user_path(user)) %> <br>
+  </div>
+
+  <div class="user-details">
+    <%= link_to(user.display_name, user_path(user)) %> <br>
+
+    <!-- todo: show reputations and badges at phase II-->
+    <span class="reputation-score" title="<%= pluralize(user.send(configatron.main_content.pluralize).length, configatron.main_content)%> ">
+        <%=user.photos.length%>
+    </span>
+
+    <span title="<%=pluralize(user.critiques.length, "critique")%>">
+      <span class="badge3"></span>
+      <span class="badgecount"><%=user.critiques.length%></span>
+    </span>
+  </div>
+
+</div>

@@ -1,0 +1,10 @@
+<%= content_for :title do %><%= @collection.name%><% end %>
+
+<%= content_for :subheader do %>
+  <h1><%= @collection.name %>(<%=@collection.photos.length%>)</h1>
+  <div id="tabs" class="user-details"><%= link_to ("collected by " + @collection.user.name), @collection.user %> </div>
+<% end %>
+
+
+<%= render :partial =>'photos/slide_show', :locals => {:photos => @collection.photos, :tab => nil }%>
+

@@ -1,0 +1,23 @@
+<div class="user-info">
+  <div class="user-gravatar48">
+      <%= link_to(image_tag(user.gravatar_url(:size=>64)), user_path(user)) %> <br>
+  </div>
+  <div class="user-details">
+    <%= link_to(user.display_name, user_path(user)) %> <br>
+    <span class="user-location"><%= user.location %></span><br>
+    <%= render :partial => 'numbers', :object => user, :as => :user %>
+<% if false %>
+    <span class="reputation-score" title="reputation"><%= user.reputation_count%></span>
+<% end %>
+  </div>
+
+
+<% if false %>
+  <div class="user-tags">
+    <a href="questions/tagged/script">script</a>, 
+    <a href="questions/tagged/chat">chat</a>, 
+    <a href="questions/tagged/comments">comments</a>
+  </div>
+<%end%>
+</div>
+

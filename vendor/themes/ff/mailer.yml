@@ -1,0 +1,15 @@
+common: &shared
+  address:              smtp.gmail.com
+  port:                 587
+  domain:               FreeFuyin.com
+  user_name:            notifications@FreeFuyin.com
+  password:             ffmail#1!
+  authentication:       plain
+  enable_starttls_auto: true
+
+development:
+  <<: *shared
+
+production:
+  <<: *shared
+

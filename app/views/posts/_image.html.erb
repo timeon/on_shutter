@@ -1,0 +1,14 @@
+<td class="imagecell photo_slide" style="width: 930px" id = "photo_<%= post.id %>">
+  <span class="image-photo"><%= image_tag(post.image.url(:large), style: "image-photo-image") %></span>
+
+  <%= link_to "", "/" + @posts_name,    class: "image-nav-up" %>
+  
+  <% if post.next %>
+    <%= link_to "", post.next,  class: "image-nav-left" %>
+  <% end %>
+    
+  <% if post.prev %>
+    <%= link_to "", post.prev,  class: "image-nav-right" %>
+  <% end %>
+
+</td>

@@ -1,0 +1,874 @@
+/* line 65, ../../../../app/stylesheets/business/_reset.sass */
+html, body
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: arial, helvetica, sans-serif;
+  vertical-align: baseline;
+}
+
+/* line 45, ../../../../app/stylesheets/business/_reset.sass */
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, pre, a, abbr, acronym, address, code, del, dfn, em, img, dl, dt, dd, ol, ul, li, fieldset, form, input, label, legend, caption, tbody, tfoot, thead, tr
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: arial, helvetica, sans-serif;
+  vertical-align: baseline;
+}
+
+/* line 49, ../../../../app/stylesheets/business/_reset.sass */
+blockquote, q
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: arial, helvetica, sans-serif;
+  vertical-align: baseline;
+}
+
+/* line 51, ../../../../app/stylesheets/business/_reset.sass */
+th, td, caption
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: arial, helvetica, sans-serif;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 53, ../../../../app/stylesheets/business/_reset.sass */
+table
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: arial, helvetica, sans-serif;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+
+/* line 55, ../../../../app/stylesheets/business/_reset.sass */
+a img
+{
+  border: none;
+}
+
+/* line 57, ../../../../app/stylesheets/business/_reset.sass */
+li
+{
+  list-style-type: none;
+}
+
+/* line 59, ../../../../app/stylesheets/business/_reset.sass */
+*:focus
+{
+  outline: 0;
+}
+
+/* line 9, ../../../../app/stylesheets/business/_tools.sass */
+.hide
+{
+  position: absolute;
+  top: -9999em;
+}
+
+/* line 3, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header
+{
+  background-color: #494c5c;
+  border-bottom-color: #636776;
+  min-width: 1044px;
+}
+/* line 8, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header #heroku-logo a
+{
+  background-image: url(/images/logo.png);
+}
+/* line 11, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header ul#heroku-account-nav li, #heroku-header ul#heroku-section-nav li
+{
+  border-left-color: #636776;
+}
+/* line 13, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header ul#heroku-account-nav li a, #heroku-header ul#heroku-section-nav li a
+{
+  color: #c5c3d3;
+}
+/* line 15, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header ul#heroku-account-nav li a:hover, #heroku-header ul#heroku-section-nav li a:hover
+{
+  color: white;
+}
+/* line 17, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header ul#heroku-account-nav li a.active, #heroku-header ul#heroku-section-nav li a.active
+{
+  color: #9def46;
+}
+/* line 19, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header ul#heroku-account-nav li a.active:hover, #heroku-header ul#heroku-section-nav li a.active:hover
+{
+  color: #9def46;
+}
+/* line 21, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header ul#heroku-account-nav
+{
+  background-color: #424354;
+}
+/* line 24, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header ul#heroku-account-nav li a
+{
+  color: #72abf9;
+}
+/* line 26, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header ul#heroku-account-nav li a:hover
+{
+  color: #97baf6;
+}
+/* line 28, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header ul#heroku-account-nav li a.active
+{
+  color: #9def46;
+}
+/* line 30, ../../../../app/stylesheets/business/_header.sass */
+#heroku-header ul#heroku-account-nav li a.active:hover
+{
+  color: #9def46;
+}
+
+/* line 3, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer
+{
+  border-top: 1px solid #818794;
+  background-color: #aeb4c4;
+  color: #484a5e;
+}
+/* line 9, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer .nav h3, #heroku-footer #heroku-footer-pull h3
+{
+  color: #484a5e;
+}
+/* line 11, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer .nav h3 a, #heroku-footer #heroku-footer-pull h3 a
+{
+  color: #484a5e;
+}
+/* line 13, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer .nav h3 a:hover, #heroku-footer #heroku-footer-pull h3 a:hover
+{
+  color: #e6e8f2;
+}
+/* line 15, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer .nav a, #heroku-footer #heroku-footer-pull a
+{
+  color: #484a5e;
+}
+/* line 17, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer .nav a:hover, #heroku-footer #heroku-footer-pull a:hover
+{
+  color: #e6e8f2;
+}
+/* line 20, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer #heroku-footer-pull dt
+{
+  color: #484a5e;
+}
+/* line 22, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer #heroku-footer-pull dt a
+{
+  color: #484a5e;
+}
+/* line 24, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer #heroku-footer-pull dt a:hover
+{
+  color: #e6e8f2;
+}
+/* line 26, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer #heroku-footer-pull dd
+{
+  color: #72738f;
+}
+/* line 28, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer #heroku-footer-pull dd a
+{
+  color: #72738f;
+}
+/* line 31, ../../../../app/stylesheets/business/_footer.sass */
+#heroku-footer #heroku-footer-pull #heroku-footer-twitter span
+{
+/*   background-image: url(/images/facebook/footer-twitter.png); */
+}
+
+/* line 10, ../../../../app/stylesheets/business/layout.sass */
+html, body
+{
+  color: #494d5c;
+  background-color: #aeb4c4;
+}
+/* line 13, ../../../../app/stylesheets/business/layout.sass */
+html a, body a
+{
+  color: #16171b;
+  text-decoration: none;
+}
+/* line 16, ../../../../app/stylesheets/business/layout.sass */
+html a:hover, body a:hover
+{
+  color: #494d5c;
+  text-decoration: underline;
+}
+
+/* line 67, ../../../../app/stylesheets/business/layout.sass */
+#content
+{
+  position: relative;
+}
+/* line 69, ../../../../app/stylesheets/business/layout.sass */
+#content .container
+{
+  width: 1044px;
+  margin: 0 auto;
+  min-width: 1044px;
+  overflow: hidden; *zoom:1;}
+/* line 71, ../../../../app/stylesheets/business/layout.sass */
+#content.onecol
+{
+  background-color: #fbfbfc;
+  background-repeat: repeat-x;
+  background-position: left top;
+}
+/* line 74, ../../../../app/stylesheets/business/layout.sass */
+#content.twocol #content-background
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+/* line 81, ../../../../app/stylesheets/business/layout.sass */
+#content.twocol #content-background #crane
+{
+  position: absolute;
+  bottom: 50px;
+  left: 36px;
+  background-image: url(/images/facebook/aside-crane.png);
+  background-repeat: no-repeat;
+  width: 284px;
+  height: 225px;
+}
+/* line 89, ../../../../app/stylesheets/business/layout.sass */
+#content.twocol #content-background .background
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 95, ../../../../app/stylesheets/business/layout.sass */
+#content.twocol #content-background .background .right, #content.twocol #content-background .background .left
+{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+/* line 99, ../../../../app/stylesheets/business/layout.sass */
+#content.twocol #content-background .background .right
+{
+  background-color: #d3d8e5;
+  background-repeat: repeat-x;
+  background-position: left top;
+  right: 0;
+}
+/* line 102, ../../../../app/stylesheets/business/layout.sass */
+#content.twocol #content-background .background .left
+{
+  background-color: #fbfbfc;
+  background-repeat: repeat-x;
+  background-position: left top;
+  left: 0;
+}
+/* line 105, ../../../../app/stylesheets/business/layout.sass */
+#content.twocol #content-background .container
+{
+  height: 100%;
+  width: 1044px;
+  margin: 0 auto;
+  min-width: 1044px;
+  overflow: hidden; *zoom:1;position:relative;}
+/* line 109, ../../../../app/stylesheets/business/layout.sass */
+#content.twocol #content-background .container .right
+{
+  background-color: #d3d8e5;
+  background-repeat: repeat-x;
+  background-position: left top;
+  width: 354px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+/* line 116, ../../../../app/stylesheets/business/layout.sass */
+#content.twocol #content-background .container .right .shadow
+{
+  border-left: 1px solid #818794;
+  background-repeat: repeat-y;
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 100%;
+}
+/* line 124, ../../../../app/stylesheets/business/layout.sass */
+#content.twocol #content-background .container .left
+{
+  background-color: #fbfbfc;
+  background-repeat: repeat-x;
+  background-position: left top;
+  width: 690px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+/* line 135, ../../../../app/stylesheets/business/layout.sass */
+.twocol .section
+{
+  float: left;
+  min-height: 400px;
+  position: relative;
+  width: 618px;
+  padding-left: 36px;
+  padding-right: 36px;
+}
+/* line 142, ../../../../app/stylesheets/business/layout.sass */
+.twocol .section .section
+{
+  float: none;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 36px;
+  padding-top: 36px;
+}
+/* line 149, ../../../../app/stylesheets/business/layout.sass */
+.twocol .aside
+{
+  float: left;
+  width: 282px;
+  padding-top: 40px;
+  padding-left: 36px;
+  padding-right: 36px;
+  position: relative;
+}
+/* line 156, ../../../../app/stylesheets/business/layout.sass */
+.twocol .aside .aside
+{
+  float: none;
+  width: 258px;
+  padding: 0;
+  padding-right: 24px;
+  margin-bottom: 36px;
+}
+
+/* line 167, ../../../../app/stylesheets/business/layout.sass */
+#thanks .onecol
+{
+  background-color: #d3d8e5;
+  background-repeat: repeat-x;
+  background-position: left top;
+}
+/* line 169, ../../../../app/stylesheets/business/layout.sass */
+#thanks .onecol .section
+{
+  padding: 18px;
+}
+/* line 171, ../../../../app/stylesheets/business/layout.sass */
+#thanks .onecol .section #note
+{
+  width: 636px;
+  padding: 18px;
+  margin: 0 auto;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fbfbfc), color-stop(100%, #ededf1));
+  background-image: -webkit-linear-gradient(top, #fbfbfc, #ededf1);
+  background-image: -moz-linear-gradient(top, #fbfbfc, #ededf1);
+  background-image: -o-linear-gradient(top, #fbfbfc, #ededf1);
+  background-image: linear-gradient(top, #fbfbfc, #ededf1);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5px #494c5c;
+  -moz-box-shadow: 0 0 5px #494c5c;
+  -box-shadow: 0 0 5px #494c5c;
+  margin-bottom: 40px;
+}
+/* line 181, ../../../../app/stylesheets/business/layout.sass */
+#thanks .onecol .section #note p, #thanks .onecol .section #note p a, #thanks .onecol .section #note h2
+{
+  margin-top: 12px;
+  font-size: 20px;
+  font-family: "CorbelRegular" , sans-serif;
+  color: #494c5c;
+  line-height: 30px;
+}
+/* line 187, ../../../../app/stylesheets/business/layout.sass */
+#thanks .onecol .section #note p a, #thanks .onecol .section #note p a a, #thanks .onecol .section #note h2 a
+{
+  color: #5a6ccc;
+}
+/* line 189, ../../../../app/stylesheets/business/layout.sass */
+#thanks .onecol .section #note h1
+{
+  font-size: 24px;
+  font-family: "CorbelRegular" , sans-serif;
+  color: #4360a9;
+}
+/* line 193, ../../../../app/stylesheets/business/layout.sass */
+#thanks .onecol .section #note h2
+{
+  color: #4360a9;
+}
+
+/* line 5, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside, .new_critique
+{
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -o-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -khtml-border-radius: 6px;
+  border-radius: 6px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.6)), color-stop(100%, rgba(255, 255, 255, 0.2)));
+  background-image: -webkit-linear-gradient(top, rgba(128, 128, 255, 0.6), rgba(255, 255, 255, 0.2));
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+  background-image: linear-gradient(top, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  -box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+  color: #494c5c;
+  font-size: 14px;
+  line-height: 20px;
+  text-shadow: white 0 1px 0px;
+  overflow: hidden; *zoom:1;overflow:hidden;}
+/* line 18, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside#form
+{
+  padding: 9px 18px 9px 18px;
+  width: 246px;
+}
+/* line 21, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside#form #formError
+{
+  color: #ae0035;
+  background-image: url(/images/partners/form-error.png);
+  background-position: left center;
+  margin-top: 5px;
+  padding-left: 28px;
+  line-height: 24px;
+  padding-bottom: 0;
+  background-repeat: no-repeat;
+}
+/* line 30, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside h2, .aside .aside dl
+{
+  overflow: hidden;
+}
+/* line 32, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside a
+{
+  color: #494c5c;
+}
+/* line 34, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside h2, .aside .aside h2 a
+{
+  font-family: "CorbelRegular" , sans-serif;
+  color: #4360a9;
+  font-size: 22px;
+  line-height: 36px;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+/* line 41, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside dl
+{
+  padding-bottom: 24px;
+}
+/* line 43, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside dl dt
+{
+  line-height: 17px;
+}
+/* line 45, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside dl dd
+{
+  line-height: 16px;
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 14px;
+  white-space: nowrap;
+}
+/* line 51, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside dl dd:last-child
+{
+  margin-bottom: 0;
+}
+/* line 53, ../../../../app/stylesheets/business/partners.sass */
+.aside .aside form
+{
+  padding-top: 10px;
+}
+/* line 55, ../../../../app/stylesheets/business/partners.sass */
+form input[type=text], form input.text
+{
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 13px;
+  color: #8085a3;
+  margin: 0;
+  padding: 0;
+  padding: 5px;
+  width: 235px;
+  -webkit-box-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1);
+  -box-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1);
+}
+/* line 66, ../../../../app/stylesheets/business/partners.sass */
+form fieldset
+{
+  width: 245px;
+  padding-bottom: 10px;
+}
+/* line 69, ../../../../app/stylesheets/business/partners.sass */
+form fieldset:last-child
+{
+  padding-bottom: 0;
+}
+/* line 71, ../../../../app/stylesheets/business/partners.sass */
+form fieldset.submit
+{
+  text-align: right;
+}
+/* line 73, ../../../../app/stylesheets/business/partners.sass */
+form fieldset.submit button
+{
+  width: 100px;
+  float: right;
+  font-family: "CorbelRegular" , sans-serif;
+  font-size: 16px;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0;
+  border: none;
+  display: block;
+  padding: 3px 10px 3px 10px;
+  text-align: center;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5f88f4), color-stop(100%, #5377d4));
+  background-image: -webkit-linear-gradient(top, #5f88f4 0%, #5377d4 100%);
+  background-image: -moz-linear-gradient(top, #5f88f4 0%, #5377d4 100%);
+  background-image: -o-linear-gradient(top, #5f88f4 0%, #5377d4 100%);
+  background-image: linear-gradient(top, #5f88f4 0%, #5377d4 100%);
+  margin-bottom: 10px;
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  -o-border-radius: 17px;
+  -ms-border-radius: 17px;
+  -khtml-border-radius: 17px;
+  border-radius: 17px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #5377d4;
+  background-position: 0 0;
+}
+/* line 91, ../../../../app/stylesheets/business/partners.sass */
+form fieldset.submit button:hover
+{
+  color: white;
+  background-color: #5f88f4;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7ea3fd), color-stop(100%, #5f88f4));
+  background-image: -webkit-linear-gradient(top, #7ea3fd 0%, #5f88f4 100%);
+  background-image: -moz-linear-gradient(top, #7ea3fd 0%, #5f88f4 100%);
+  background-image: -o-linear-gradient(top, #7ea3fd 0%, #5f88f4 100%);
+  background-image: linear-gradient(top, #7ea3fd 0%, #5f88f4 100%);
+}
+
+/* line 99, ../../../../app/stylesheets/business/partners.sass */
+.section .section
+{
+  min-height: 0;
+  overflow: hidden; /* line 107, ../../../../app/stylesheets/business/partners.sass */
+.section .section:last-child
+{
+  background-image: none;
+  padding-bottom: 54px;
+  padding-top: 24px;
+}
+/* line 111, ../../../../app/stylesheets/business/partners.sass */
+.section .section p, .section .section li
+{
+  font-size: 14px;
+  line-height: 20px;
+  color: #2f313b;
+}
+/* line 115, ../../../../app/stylesheets/business/partners.sass */
+.section .section p a, .section .section li a
+{
+  color: #5a6cc9;
+}
+/* line 117, ../../../../app/stylesheets/business/partners.sass */
+.section .section p a:hover, .section .section li a:hover
+{
+  color: #5a6cc9;
+  text-decoration: underline;
+}
+/* line 121, ../../../../app/stylesheets/business/partners.sass */
+.section .section ul li
+{
+  padding-bottom: 12px;
+  margin-left: 1.4em;
+  line-height: 18px;
+  list-style: url(/images/partners/bullet-arrow.png);
+}
+/* line 127, ../../../../app/stylesheets/business/partners.sass */
+.section .section .header
+{
+  padding-bottom: 16px;
+}
+/* line 129, ../../../../app/stylesheets/business/partners.sass */
+.section .section .header h2
+{
+  color: #4063c2;
+  font-family: "CorbelRegular" , sans-serif;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+/* line 134, ../../../../app/stylesheets/business/partners.sass */
+.section .section .header h3
+{
+  font-size: 18px;
+  color: #4c5f8d;
+  font-family: "CorbelRegular" , sans-serif;
+}
+/* line 138, ../../../../app/stylesheets/business/partners.sass */
+.section .section .header p
+{
+  font-size: 14px;
+}
+/* line 140, ../../../../app/stylesheets/business/partners.sass */
+.section .section .article
+{
+  margin: 0 auto;
+}
+/* line 142, ../../../../app/stylesheets/business/partners.sass */
+.section .section .article h2
+{
+  color: #4360a9;
+  font-family: "CorbelRegular" , sans-serif;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+/* line 147, ../../../../app/stylesheets/business/partners.sass */
+.section .section .article h3, .section .section .article span.h3
+{
+  display: block;
+  font-size: 20px;
+  color: #4360a9;
+  font-family: "CorbelRegular" , sans-serif;
+  padding-bottom: 12px;
+}
+/* line 153, ../../../../app/stylesheets/business/partners.sass */
+.section .section .article h3 a, .section .section .article span.h3 a
+{
+  color: #4360a9;
+  font-family: "CorbelRegular" , sans-serif;
+  text-decoration: none;
+}
+/* line 157, ../../../../app/stylesheets/business/partners.sass */
+.section .section .article h3 a:hover, .section .section .article span.h3 a:hover
+{
+  color: #617fc6;
+}
+/* line 159, ../../../../app/stylesheets/business/partners.sass */
+.section .section .article h4, .section .section .article span.h4
+{
+  display: block;
+  font-size: 18px;
+  color: #5f616b;
+  font-family: "CorbelRegular" , sans-serif;
+  margin-bottom: 12px;
+}
+/* line 165, ../../../../app/stylesheets/business/partners.sass */
+.section .separator
+{
+  height: 6px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 176, ../../../../app/stylesheets/business/partners.sass */
+#intro
+{
+  text-align: center;
+  background-color: #474a5a;
+  border-bottom: 1px solid #333642;
+  position: relative;
+  min-width: 1044px;
+}
+/* line 182, ../../../../app/stylesheets/business/partners.sass */
+#intro .shadow
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 380px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0.32)), color-stop(2%, rgba(0, 0, 0, 0.2)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(98%, rgba(0, 0, 0, 0.2)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.2) 2%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.2) 98%);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.2) 2%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.2) 98%);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.2) 2%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.2) 98%);
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.2) 2%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.2) 98%);
+  z-index: 1;
+  width: 100%;
+  min-width: 1044px;
+}
+/* line 191, ../../../../app/stylesheets/business/partners.sass */
+#intro .container
+{
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  min-width: 1044px;
+  text-align: center;
+  overflow: hidden !important;
+  position: relative;
+}
+/* line 199, ../../../../app/stylesheets/business/partners.sass */
+#intro .container .background
+{
+  background-image: url(/images/partners/pattern-seigaiha.png);
+  background-repeat: repeat;
+  background-position: center top;
+  width: 100%;
+  height: 380px;
+  position: absolute;
+  z-index: 0;
+}
+/* line 207, ../../../../app/stylesheets/business/partners.sass */
+#intro .container .container
+{
+  width: 1044px;
+  margin: 0 auto;
+  min-width: 1044px;
+  overflow: hidden; *zoom:1;background:none;background-repeat:no-repeat;position:relative;z-index:1;height:380px;font-family:"CorbelRegular",sans-serif;color:#bfd2ff;}
+/* line 216, ../../../../app/stylesheets/business/partners.sass */
+#intro .container .title, #intro .container .subtitle, #intro .container .description
+{
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  text-shadow: black 0px 1px 1px;
+  width: 920px;
+  margin: 0 auto;
+}
+/* line 224, ../../../../app/stylesheets/business/partners.sass */
+#intro .container .title
+{
+  font-family: "CorbelRegular" , sans-serif;
+  font-size: 32px;
+  color: #fdcb00;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+/* line 230, ../../../../app/stylesheets/business/partners.sass */
+#intro .container .subtitle
+{
+  font-family: "CorbelRegular" , sans-serif;
+  font-size: 28px;
+  color: #cccccc;
+}
+/* line 234, ../../../../app/stylesheets/business/partners.sass */
+#intro .container .description
+{
+  padding-top: 30px;
+}
+/* line 236, ../../../../app/stylesheets/business/partners.sass */
+#intro .container .description p
+{
+  margin: 0;
+  padding: 0 0 15px 0;
+  font-family: "CorbelRegular" , sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  color: #bfd2ff;
+}
+/* line 243, ../../../../app/stylesheets/business/partners.sass */
+#intro .container #partnerlogos
+{
+  padding-top: 45px;
+  text-align: center;
+}
+/* line 246, ../../../../app/stylesheets/business/partners.sass */
+#intro .container #partnerlogos .logo
+{
+  line-height: 120px;
+  width: 210px;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 40px;
+  display: inline-block;
+  text-indent: -9999px;
+}
+/* line 255, ../../../../app/stylesheets/business/partners.sass */
+#intro .container #partnerlogos .logo:last-child
+{
+  margin-right: 0;
+}
+
+.SPRITE_shadow 
+{
+    background: no-repeat url(https://lh4.googleusercontent.com/s/v/75.14/img/lh_sprite.gif) -116px -174px;
+    width: 152px;
+    height: 152px;
+}

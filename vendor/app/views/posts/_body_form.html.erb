@@ -1,0 +1,5 @@
+  <%= form_for(post, :remote => true) do |f| %>
+      <%= f.text_area :body, :cols => "92", :rows => "9", :id => "post_editor" %>
+      <%= f.submit "Save Changes", :class=>"submit", :name=>"commit", :type=>"submit" %>
+      <input type="button" name="cancel" value="Cancel" onClick="hide_edit_post_form(<%=post.id%>)"/>
+  <% end -%>

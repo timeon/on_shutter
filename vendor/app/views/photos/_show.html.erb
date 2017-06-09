@@ -1,0 +1,30 @@
+<table>
+  <tr class="post_row">
+    <%= render  :partial => '/posts/voice' , :locals => {:post => post}%>
+    <%= render  :partial => '/posts/image' , :locals => {:post => post}%>
+  </tr>
+</table>
+
+<%= content_for :main do %>
+  <table>
+    <tr class="post_row">
+	  <td class="votecell" id = "photo_padding_<%= post.id %>"></td>
+    	
+	  <%= render :partial => '/posts/info', :locals => {:post => post} %>
+	  
+	  <% if logged_in? %>
+  	    <%= render :partial => '/posts/edit', :locals => {:post => post} %>
+	  <% end %>  
+	  
+    </tr>
+  </table>
+  
+  <%= render :partial => '/posts/responses', :locals => {:post => post}  %>
+<% end %>
+
+
+<% if false %>
+  <%= content_for :side do %>
+    <%= render :partial => '/posts/exif', :locals => {:post => post} %>
+  <% end %>
+<% end %>

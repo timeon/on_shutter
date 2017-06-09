@@ -1,0 +1,64 @@
+# Configuration options can be accessed as
+# configatron.site_name
+
+common: &shared
+  site_name: OnShutters
+  domain: OnShutters.com
+  site_namemobile: OnShutters
+  company_name: OnShutters
+  admin_email: admin@OnShutters.com
+  support_name: OnShutters Support
+  support_email: support@OnShutters.com
+  description: OnShutters, photo critiquing community for enthusiast and professional photographers
+  motto: Share your best with fellow photographers
+  keywords: photo critique, photo review, photo forum, photo voting, amateur photography, professional photography
+  main_content: photo
+  contents:
+    photo: 
+      name: photo
+      response_name: critique
+      response_display_name: critique
+      praise: Nice shot
+      response_praise: Good critique
+#    article:
+#      name: article
+#      response_name: review
+#      response_display_name: review
+#      praise: Thoughtful article
+#      response_praise: Good review
+#    question:
+#      name: question
+#      response_name: answer
+#     response_display_name: answer
+#      praise: Good question
+#      response_praise: Helpful answer
+  responses:
+    critique: 
+      content: photo
+      praise: Good critique
+    review:
+      content: article
+      praise: Good review
+    answer:
+      content: question
+      praise: Helpful answer
+  facebook:
+    appid: 187222254680903
+    apikey: 5e21339ba400dd12aa8fc5bedbf51333
+  ads: false
+        
+development:
+  <<: *shared
+  site_url: http://192.168.0.149:5000
+
+production:
+  <<: *shared
+  site_url: www.OnShutters.com
+  
+staging:
+  <<: *shared
+
+test:
+  <<: *shared
+
+

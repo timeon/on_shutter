@@ -1,0 +1,34 @@
+<%= content_for :subheader do %>
+	<h1>New account</h1>
+<% end %>
+
+<section id="services_new" class="services">
+	<div>
+		<h3>This authentication is new to <%= configatron.site_name %></h3>
+		
+		<p class="small">
+			Provider: <%= @authhash[:provider] %><br />
+			ID: <%= @authhash[:uid] %><br />
+			Name: <%= @authhash[:name] %><br />
+			Email: <%= @authhash[:email] %>	<br />
+		</p>
+
+		<%= form_tag :controller => "services", :action => "newaccount" do %>
+			<%= submit_tag "Confirm and create new account" %> <%= submit_tag "Cancel" %>
+		<% end %>
+	</div>
+
+	<p>
+	If you think you already have an <%= configatron.site_name %> account, and you were just trying to associate a new authentication with your existing account, here’s what to do:
+	</p>
+	<ul class="small">
+		<li>Log in to <%= configatron.site_name %> with your existing authentication service</li>
+		<li>Go to your settings page (located at the top/right corner of the page)
+		<li>Add one or more accounts to be used to sign-in</li>
+	</ul>
+</section>
+
+<%= content_for :style do %>
+  <%= stylesheet_link_tag("services") %>
+<% end %>
+

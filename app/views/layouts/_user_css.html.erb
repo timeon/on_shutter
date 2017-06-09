@@ -1,0 +1,7 @@
+<% if logged_in? and current_user.css? %>
+
+<style type="text/css">
+  <%= current_user.css %>
+</style>
+
+<% end %>

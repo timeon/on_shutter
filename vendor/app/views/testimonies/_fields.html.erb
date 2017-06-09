@@ -1,0 +1,8 @@
+<% if post.id == nil %>
+  <label>Title of the <%= @post_name%>:</label><br>
+  <%= f.text_field 'title', :size=>108 %><br><br>
+
+  <%= f.text_area :body, :cols => "95", :rows => "40", :id => "new_post_editor" %>
+<% else %>
+  <%= f.text_area :body, :cols => "95", :rows => "20",  :id => "new_post_editor" %>
+<% end %>

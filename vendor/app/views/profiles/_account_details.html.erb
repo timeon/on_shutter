@@ -1,0 +1,44 @@
+<br/><h2 class="name">Account Details</h2><br/><br/><br/>
+
+<div class="addon-options">
+
+  <div class="free ga option">
+    <h3 class="name">Login</h3>
+    <p class="price"> <%=h(@user.login)%> </p>
+  </div>
+
+  <div class="free ga option">
+    <h3 class="name">Email</h3>
+    <p class="price"> <%=h(@user.email) %>
+      <% if @user.not_using_openid? %>
+        <%= link_to "change", edit_email_user_url(@user), :class=>"button" %><small> </small>
+      <% end %>
+    </p>
+  </div>
+
+  <% if ! @user.not_using_openid? %>
+    <div class="free ga option">
+      <h3 class="name">OpenID URL</h3>
+      <p class="price"> <%=h(h(@user.identity_url)) %></p>
+    </div>
+  <% end %>
+
+   <% if @user.not_using_openid? %>
+    <div class="free ga option">
+      <h3 class="name">Password</h3>
+      <p class="price"> <%= "*"*8 %> <%= link_to "change", edit_password_user_url(@user), :class=>"button" %><small></small> </p>
+    </div>
+  <% end %>
+ 
+  <div class="free ga option">
+    <h3 class="name">Account created</h3>
+    <p class="price"> <%=h(@user.created_at.to_s(:long))%> </p>
+  </div>
+
+  <div class="free ga option">
+    <h3 class="name">Last updated</h3>
+    <p class="price"> <%=h(@user.updated_at.to_s(:long))%> </p>
+  </div>
+
+</div>
+

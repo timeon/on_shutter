@@ -1,0 +1,9 @@
+  <% notice_id = "photo_vote_#{post.id}_notice" %>
+
+  <div class="vote"  id="photo_vote_<%= post.id %>">
+    <%= render :partial => '/posts/vote_up',   :locals => {:notice_id => notice_id, :post => post} %>
+    <%= render :partial => '/posts/vote_sum',  :locals => {:notice_id => notice_id, :post => post} %>
+    <%= render :partial => '/posts/vote_down', :locals => {:notice_id => notice_id, :post => post} %>
+    <%= render :partial => '/posts/star', 		:locals => {:notice_id => notice_id, :post => post} %>
+    <%= render :partial => 'shared/in_place_notice', :locals => {:notice_id=>notice_id} %>
+  </div>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p>Dear <%= @contact.names %>,</p>
+    <p>
+      You have successfully updated your family's contact for the CBCSD Central Campus directory. 
+      Again, it will not be available online, but for the printed directory only. 
+    </p>
+    
+	<table style="font-size: 20px" width="80%">
+		<%= render :partial => 'contacts/show', :locals => {:contact => @contact} %>  
+	</table>   
+	 
+    <p>
+      To view your contact info or make changes, just follow this link:<br />
+      <%= @url %>    </p>
+    <p>Thanks and have a blessed day! </p>
+    <p>向前</p>
+  </body>
+</html>
+

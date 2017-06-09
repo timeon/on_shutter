@@ -1,0 +1,16 @@
+      <label>Give URL for the <%= @post_name%></label><br>
+      <%= f.text_field 'image_url',  :size=>100 %><br><br>
+
+      <label>or upload a file</label><br>
+      <%= f.file_field 'image', :style=>"width: 600px" %><br><br>
+      
+<%if false%>      
+      Select an exiting album <%= collection_select(@post_name, :album_id, current_user.albums, :id, :title, {:index => current_user.albums[0]}) %>
+      Or create a new one <%= text_field 'new_album', 'title', :size=>40 %><br><br>      
+<% end %>
+
+      <label>Title:</label><br>
+      <%= f.text_field 'title', :size=>108 %><br><br>
+      
+      <label>Detailed description of the <%= @post_name%></label><br>
+      <%= f.text_area :body, :cols => "95", :rows => "20", :id => "new_post_editor" %>

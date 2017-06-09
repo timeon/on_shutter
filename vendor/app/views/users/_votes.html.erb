@@ -1,0 +1,58 @@
+<div class="user-stats-table">
+  <table class="summary-title">
+    <tbody>
+      <tr>
+        <td> <div class="summarycount ar"> <%= @user.vote_count%></div> </td>
+        <td class="summary-header"> <h2> Votes</h2> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="user-stats-table">
+  <table class="votes-cast-stats">
+    <thead>
+      <tr>
+        <th colspan="2"> all time </th>
+        <th class="spacer"> &nbsp; </th>
+<% if false %>
+        <th colspan="2"> by type </th>
+        <th class="spacer"> &nbsp; </th>
+<% end %>
+        <th> month </th>
+        <th class="spacer"> &nbsp; </th>
+        <th> week </th>
+        <th class="spacer"> &nbsp; </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= @user.vote_count(:up) %></td>
+        <td class="desc"> up </td>
+        <td> </td>
+
+<% if false %>
+        <td> <%= @user.votes.count(:conditions => "voteable_type = 'Photo'") %></td>
+        <td class="desc"> on <%= configatron.content.pluralize %> </td>
+        <td> </td>
+<% end %>
+        <td rowspan="2" class="span"> <%= @user.votes.count(:conditions => ["created_at > ?", Date.today.prev_month]) %> </td>
+        <td> </td>
+
+        <td rowspan="2" class="span"> <%= @user.votes.count(:conditions => ["created_at > ?", Date.today - 7]) %> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> <%= @user.vote_count(:down) %></td>
+        <td class="desc"> down </td>
+        <td> </td>
+
+<% if false %>
+        <td> <%= @user.votes.count(:conditions => "voteable_type = 'Critique'") %></td>
+        <td class="desc"> on <%= configatron.response.pluralize %> </td>
+        <td> </td>
+<% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>

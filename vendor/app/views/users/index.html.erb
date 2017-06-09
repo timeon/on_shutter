@@ -1,0 +1,42 @@
+<%= content_for :title do %>users<% end %>
+<%= content_for :description do %>users<% end %>
+<%= content_for :keywords do %>uers<% end %>
+
+<%= content_for :subheader do %>
+    <h1 id="h-users">Users</h1>
+<% if false %>
+    <div id="tabs">
+      <a class="youarehere" href="/users?tab=reputation" title="Users with the highest reputation scores">reputation</a>
+      <a href="/users?tab=newusers" title="Users who joined in the last 45 days">new users</a>
+      <a href="/users?tab=voters" title="Users who voted more than 10 times">voters</a>
+      <a href="/users?tab=editors" title="Users who edited more than 5 posts">editors</a>
+    </div>
+<% end %>
+<% end %>
+
+<div class="page-description" style="padding-bottom: 10px;">
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+<% if false %>
+        <td>
+          Type to find users:<input id="userfilter" name="userfilter" class="userfilter" type="text" value="" style="margin-left: 10px;">
+        </td>
+        <td style="text-align: right;">
+          <div id="tabs-interval" class="subtabs">
+            <a href="/users?tab=reputation&amp;filter=all" title="2010-05-20 to today">all</a>
+            <a href="/users?tab=reputation&amp;filter=year" title="2011-01-01 to today">year</a>
+            <a href="/users?tab=reputation&amp;filter=quarter" title="2011-04-01 to today">quarter</a>
+            <a class="youarehere" href="/users?tab=reputation&amp;filter=month" title="2011-06-01 to today">month</a>
+            <a href="/users?tab=reputation&amp;filter=week" title="2011-06-12 to today">week</a>
+          </div>
+        </td>
+<%end%>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="user-browser">
+  <%= render :partial => 'thumb', :collection => @users, :as => :user %>
+</div>

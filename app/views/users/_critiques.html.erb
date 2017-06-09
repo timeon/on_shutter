@@ -1,0 +1,40 @@
+<div class="user-stats-table" id="questions-table">
+  <a name="questions"></a>
+  <table class="summary-title">
+    <tbody>
+      <tr>
+        <td>
+          <span class="summarycount ar"><%=@user.critiques.length%></span>
+        </td>
+        <td class="summary-header">
+          <h2><%= configatron.response.pluralize.capitalize%> </h2>
+        </td>
+<% if false %>
+        <td style="width: 100%">
+          <div id="tabs-question-user" class="subtabs">
+            <a class="youarehere" href="/users/stats/questions?userid=1048&amp;page=1&amp;sort=votes" title="sort by highest votes">votes</a>
+            <a href="/users/stats/questions?userid=1048&amp;page=1&amp;sort=newest" title="sort by creation date">newest</a>
+            <a href="/users/stats/questions?userid=1048&amp;page=1&amp;sort=views" title="sort by most viewed">views</a>
+            <a href="/users/stats/questions?userid=1048&amp;page=1&amp;sort=recent" title="sort by recent activity">recent</a>
+          </div>
+        </td>
+<% end %>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div class="critique-list">  
+    <%= render :partial => 'slip', :collection => @user.critiques, :as => :content %>
+  </div>
+
+<% if false %>
+  <div id="question-pager" class="pager fr">
+    <span class="page-numbers current">1</span>
+    <a href="/users/stats/questions?page=2&amp;userid=18&amp;sort=votes" title="go to page 2"><span class="page-numbers">2</span></a>
+    <a href="/users/stats/questions?page=3&amp;userid=18&amp;sort=votes" title="go to page 3"><span class="page-numbers">3</span></a>
+  </div>
+<% end %>
+
+</div>
+
+<br class="cbt">

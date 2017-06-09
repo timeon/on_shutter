@@ -1,0 +1,112 @@
+
+
+/* ---------------------------------------------------- */
+/* SLIDESHOW
+/* ---------------------------------------------------- */
+#slideshow {
+text-align:center;
+width: 960px;
+border: 0px solid #ddd;}
+
+#slideshow ul {
+margin: 0;
+padding: 0;
+list-style-type: none;
+height: 1%; /* IE fix */}
+
+#slideshow ul:after {
+content: ".";
+clear: both;
+display: block;
+height: 0;
+visibility: hidden;}            
+
+/* ---------------------------------------------------- */
+/* SLIDESHOW > SLIDES
+/* ---------------------------------------------------- */
+#slideshow .slides {
+text-align:center;
+overflow: hidden;
+width: 960px;
+}
+
+#slideshow .slides ul {
+width: 2880px;}
+
+#slideshow .slides li {
+text-align:center;
+vertical-align:center;
+height: 690px;
+float: left;
+padding: 5px;
+}
+
+#slideshow .slides li a img{
+/*   width: 950px; */
+text-align:center;
+
+}
+#slideshow .slides h1 {
+    margin-top: 0;
+    text-align: center;
+    color: #333333;
+    font-family: "Times New Roman";
+    font-size: 60px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    line-height: 1.2em;
+    margin: 3;
+}
+
+#slideshow .slides h2 {
+    margin-top: 0;
+    text-align:center;
+    color: #555555;
+    font-size: 24px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1.2em;
+    margin: 2;
+}
+
+/* ---------------------------------------------------- */
+/* SLIDESHOW > NAVIGATION
+/* ---------------------------------------------------- */
+#slideshow .slides-nav {
+text-align:center;
+background-color: #fffff;
+border-top: 0px solid #ccc;}
+
+#slideshow .slides-nav li {
+text-align: center;
+float: left;}
+
+#slideshow .slides-nav li a {
+text-align:center;
+display: block;
+padding: 15px 20px;
+outline: none;}
+
+.js #slideshow .slides-nav li.on,
+.js #slideshow .slides-nav li.on a {
+text-align:center;
+background-color: #eee;}
+
+.js #slideshow .slides-nav li.on a {
+position: relative;
+text-align:center;
+top: -4px;}
+
+
+#slidesnav ul.slides-nav
+{
+  list-style-type: none;
+}
+
+#slidesnav .slides-nav li
+{
+  float: left;
+  padding-right: 10px;
+}

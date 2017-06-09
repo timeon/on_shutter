@@ -1,0 +1,40 @@
+<div class="round" id="topbar">
+  <div id="hlinks">
+
+    <span id="hlinks-user">
+        <% if current_user %>
+          <%= link_to current_user.display_name, user_path(current_user), :title => "view and change account information" %>
+      
+          <% if false%>
+            <a href="/users/7032/timeon?tab=reputation"><span class="reputation-score" title="your reputation; view reputation changes">1</span></a>
+          <% end %>
+      
+          <a href="#"><span class="reputation-score" title="Total votes earned"> <%=current_user.karma%> </span></a>
+          <span class="lsep">|</span>
+      
+          <a href="/users/logout">Log out</a> <span class="lsep">|</span>
+          <%= link_to "Settings", services_path, :title => "Authentication services settings"%>
+        <% else %>
+          <a href="/users/login">Log in</a>
+        <% end %>
+      
+      </span>
+      
+      <span id="hlinks-custom">
+        <span class="lsep">|</span>
+        <a href="/faq">FAQ</a>
+        
+        <% if false %> 
+          <span class="lsep">|</span>
+          <a href="http://groups.google.com/group/onshutters">discussions</a>
+        <% end %>
+      </span>
+  </div>
+
+  <div id="hsearch">
+    <form id="search" action="/<%= configatron.main_content.pluralize %>" method="get">
+      <input name="keyword" class="textbox" tabindex="1" onfocus="if (this.value=='Search') this.value = ''"
+      type="text" maxlength="140" size="28" value="Search">
+    </form>
+  </div>
+</div>

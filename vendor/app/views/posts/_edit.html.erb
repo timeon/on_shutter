@@ -1,0 +1,6 @@
+<td id="<%= 'edit_post' %>"
+	 name="<%= 'post_' + post.id.to_s %>"  
+	 style="display:none" >
+    <br>
+	<%= render :partial => '/posts/body_form', :locals => {:post => post}  %>
+</td>

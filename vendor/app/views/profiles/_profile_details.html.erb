@@ -1,0 +1,22 @@
+<br/>
+
+<h2 class="name">Member Profile</h2>
+
+<%= link_to "Update profile", edit_profile_url(current_user), :class=>"button"  %>
+
+<br/><br/><br/>
+
+<div class="addon-options">
+	<% @profile.public_attributes.each do |column| -%>
+      <div class="free ga option">
+        <h3 class="name"><%= column.humanize %> </h3>
+        <p class="price"><%= @profile.send(column) || '-' %></p>
+      </div>
+	<% end -%>
+
+  <div class="free ga option">
+    <h3 class="name">Seen</h3>
+<!--    <p class="price"><%#= time_ago_in_words(@profile.seen) %> ago</p>-->
+  </div>
+
+</div>

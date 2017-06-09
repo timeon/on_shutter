@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p>Dear <%= @contact.names %>,</p>
+    <p>
+      Thank you for taking photos, uploading them and update your contact information. Well, you may not have anything to update. Thank you for that too. <br><br> 
+      Before we put it to the print, please verify your contact information I have is <b>complete, accurate</b>, and make sure you like your <b>family photo</b>  
+            请确认您的通讯信息是否完整，准确，照片是否漂亮满意。<p>
+      <%= @url %>
+    </p>
+
+    <table style="width="80%">
+      <%= render :partial => '/contacts/show', :locals => {:contact => @contact, :photo => false, :links => true} %>  
+    </table>
+    
+    <p>Thanks and have a blessed day! <p>
+    向前弟兄<br/>
+    858-603-3011</p>
+  </body>
+</html>
+

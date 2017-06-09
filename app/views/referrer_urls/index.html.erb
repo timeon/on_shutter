@@ -1,0 +1,24 @@
+<table class="sortable" >
+  <tr>
+    <th width="5%">Users</th>
+    <th width="5%">Hits</th>
+    <th>Url</th>
+  </tr>
+
+<% @referrer_urls.each do |referrer_url| %>
+  <tr class="<%= cycle :even, :odd, :name => 'row' %>" >
+    <td><%= link_to referrer_url.users.length, users_path + "?referrer_url=" + referrer_url.id.to_s %></td>
+    <td><%= link_to referrer_url.hits.length, hits_path(:referrer_url => referrer_url) %></td>
+    <td><%= link_to referrer_url.url, referrer_url.url%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+<% content_for(:page_title) do %>
+  <% @page_title = "Referrer urls" %>
+  <h1>Referrer urls</h1>
+<% end %>
+

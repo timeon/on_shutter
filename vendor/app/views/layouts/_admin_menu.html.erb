@@ -1,0 +1,8 @@
+<% if admin? %>
+  <ul>
+        <li class="youarehere"><%= link_to "Users", users_path, :id=>"nav-users"%></li>
+        <li><a id="nav-tags" href="/tags">Tags</a></li>
+        <li><%= link_to 'Admin',  "/admin" %></li>
+        <li><a id="nav-badges" href="/badges">Badges</a></li>
+  </ul>
+<%end%>

@@ -1,0 +1,22 @@
+<%= content_for :title do %>Reset Password<% end %>
+<%= content_for :subheader do %><h1>Reset Password</h1><% end %>
+
+<%= content_for :main do %>
+  <%= devise_error_messages! %>
+  <p class="overview">Enter your email address below to receive a link for resetting your password.</p>
+
+  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+    <%= f.text_field :email, :size => 40 %></p>
+    <%= f.submit "", :class=>"submit", :name=>"commit", :type=>"submit", :value=>"Request link " %>
+  <% end %>
+<% end %>
+
+<%= content_for :side do %>
+  Don't have an account yet?<br>
+  <%= link_to 'Sign Up', new_user_registration_path %><br>
+  <br><br>
+  Try your password?<br>
+  <%= link_to 'Log In', new_user_session_path %><br>
+  <br><br>  
+<% end %>
+

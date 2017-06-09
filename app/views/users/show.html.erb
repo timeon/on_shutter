@@ -1,0 +1,46 @@
+<%= content_for :title do %><%= @user.display_name%><% end %>
+<%= content_for :description do %><%= sanitize(@user.display_name)%>, <%= sanitize(@user.about_me)%><% end %>
+<%= content_for :keywords do %><%= sanitize(@user.about_me) %><% end %>
+
+<%= content_for :subheader do %>
+    <%= render 'header' %>
+<% end %>
+
+<%= render 'vcard' %><hr>
+
+
+<%= render 'votes' %><hr>
+
+<%if false%>
+  <%= render 'collections' %>
+  <%= render 'favorite_users' %>
+<%end%>
+
+    
+<% configatron.contents.to_hash.keys.each do |type| %>
+<% if false and type == :photo %>
+  <%= render :partial => 'contributed_contents', :locals => {:index_link => true,  :type => :album} %>
+<% end %>
+  <%= render :partial => 'contributed_contents', :locals => {:index_link => true,  :type => type} %>
+  <%= render :partial => 'contributed_contents', :locals => {:index_link => false, :type => configatron.contents.send(type).response_name} %>
+  <%= render :partial => 'favorite_contents',    :locals => {:index_link => true,  :type => type} %>
+  <hr>
+<% end %>
+
+
+<%= content_for :style do %>
+  <style type="text/css">
+    h1 { font-size: 200%; }
+    .history-table td { padding: 5px; vertical-align:middle; }
+    .user-stats-table { margin-left:50px; margin-bottom:15px; }
+    #user-about-me pre, blockquote { width: 95%; }
+    .no-overflow { width: 230px; color: #999; white-space: nowrap; overflow: hidden; }
+    .summary-header { vertical-align:middle; padding-left:10px; }
+    .summary-header h2 { font-size:200%; } 
+    .summary-title { clear:both; }        
+    .vcard { width:960px; margin-top:-10px; }
+    .badge-col { width: 200px; }
+    .user-stats-table .question-summary { width: 800px; }
+    #user-avatar { padding:20px 20px 8px 20px; }
+  </style>
+<% end %>

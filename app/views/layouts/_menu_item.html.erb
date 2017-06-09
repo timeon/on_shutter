@@ -1,0 +1,22 @@
+<li class="<%= @current_content == type ? "youarehere" : "nothere" %>">
+	
+  <% post_path = "/" + type.pluralize + "/new" %>
+  <% notice_id = "post_#{type}_notice" %>
+  
+	<table>
+		<tr>
+			<td>
+				<%= link_to image_tag(type.pluralize + "_32.png", :class=>'no_boder', :title => "Show #{type.pluralize}"),  "/" + type.pluralize %>
+			</td>
+			<td width="5px"></td>
+			<td>
+				<%= link_to name.pluralize.capitalize, "/" + type.pluralize, :title => "Show #{type.pluralize}" %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= render :partial => 'shared/in_place_notice', :locals => {:notice_id=> notice_id} %>		
+			</td>
+		</tr>
+	</table>
+</li>
